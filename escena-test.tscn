@@ -24,13 +24,13 @@ vframes = 6
 scale = Vector2(1, 1)
 shape = SubResource("CapsuleShape2D_8v5q3")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2(719, 837)
 scale = Vector2(20, 1)
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Floor"]
 texture = ExtResource("3_xc7sl")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
 scale = Vector2(6, 6)
 shape = SubResource("RectangleShape2D_cqcn7")
