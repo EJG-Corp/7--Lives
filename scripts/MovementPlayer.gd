@@ -6,6 +6,12 @@ var gravity = 900
 var acceleration = 2000
 
 
+@onready var _animated_sprite = $AnimatedSprite2D
+
+func _process(_delta):
+		_animated_sprite.play("Idle")
+	
+
 func _physics_process(delta:float) -> void:
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -16,5 +22,4 @@ func _physics_process(delta:float) -> void:
 				
 	var move_input = Input.get_axis("move_left","move_right")
 	velocity.x = move_toward(velocity.x,move_input*speed,acceleration*delta)
-	
 	move_and_slide()

@@ -1,32 +1,86 @@
-[gd_scene load_steps=6 format=3 uid="uid://2x7yo1ncmr54"]
+[gd_scene load_steps=16 format=3 uid="uid://bqsx7dyef6e31"]
 
-[ext_resource type="Texture2D" uid="uid://c4mnbw4b05350" path="res://assets/Meow Knight/Meow-Knight_Idle.png" id="1_2trat"]
 [ext_resource type="Script" path="res://scripts/MovementPlayer.gd" id="1_d6v8v"]
+[ext_resource type="Texture2D" uid="uid://cbt1rfpmpfqif" path="res://assets/Idle/Meow_Knight1.png" id="2_47aie"]
+[ext_resource type="Texture2D" uid="uid://5t7eog6v3at8" path="res://assets/Idle/Meow_Knight2.png" id="3_56vfh"]
 [ext_resource type="Texture2D" uid="uid://b5qikgrmq80eu" path="res://icon.svg" id="3_xc7sl"]
+[ext_resource type="Texture2D" uid="uid://caqg10u7t68q3" path="res://assets/Idle/Meow_Knight3.png" id="4_fwju3"]
+[ext_resource type="Texture2D" uid="uid://dokbocgs3tbv6" path="res://assets/Idle/Meow_Knight4.png" id="5_tmjd8"]
+[ext_resource type="Texture2D" uid="uid://cmb84lba16vew" path="res://assets/Idle/Meow_Knight5.png" id="6_t2c0h"]
+[ext_resource type="Texture2D" uid="uid://b0e0225sal0br" path="res://assets/Idle/Meow_Knight6.png" id="7_r3epe"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8v5q3"]
+radius = 5.6
+height = 24.8
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r64tx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_47aie")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_56vfh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fwju3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tmjd8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_t2c0h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_r3epe")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 10.0
+}]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_k0kt4"]
+friction = 10.0
+rough = true
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cqcn7"]
+
+[sub_resource type="Animation" id="Animation_6o18r"]
+resource_name = "Idle"
+length = 0.5
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_6p3h1"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lokm0"]
+_data = {
+"Idle": SubResource("Animation_6o18r"),
+"RESET": SubResource("Animation_6p3h1")
+}
 
 [node name="Node2D" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(425, 199)
 scale = Vector2(5, 5)
+slide_on_ceiling = false
 script = ExtResource("1_d6v8v")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-position = Vector2(0, 2)
-texture = ExtResource("1_2trat")
-vframes = 6
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-scale = Vector2(1, 1)
+position = Vector2(-1.4, -3.8)
 shape = SubResource("CapsuleShape2D_8v5q3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+sprite_frames = SubResource("SpriteFrames_r64tx")
+animation = &"Idle"
+frame = 5
+frame_progress = 0.040844
 
 [node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2(719, 837)
 scale = Vector2(20, 1)
+physics_material_override = SubResource("PhysicsMaterial_k0kt4")
 
 [node name="Sprite2D" type="Sprite2D" parent="Floor"]
 texture = ExtResource("3_xc7sl")
@@ -34,3 +88,8 @@ texture = ExtResource("3_xc7sl")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
 scale = Vector2(6, 6)
 shape = SubResource("RectangleShape2D_cqcn7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_lokm0")
+}
