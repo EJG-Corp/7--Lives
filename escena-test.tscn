@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://2x7yo1ncmr54"]
+[gd_scene load_steps=8 format=3 uid="uid://bqsx7dyef6e31"]
 
 [ext_resource type="Texture2D" uid="uid://c4mnbw4b05350" path="res://assets/Meow Knight/Meow-Knight_Idle.png" id="1_2trat"]
 [ext_resource type="Script" path="res://scripts/MovementPlayer.gd" id="1_d6v8v"]
+[ext_resource type="Texture2D" uid="uid://bxk8gyw1xa0b8" path="res://assets/cursor.png" id="3_5f2t5"]
 [ext_resource type="Texture2D" uid="uid://b5qikgrmq80eu" path="res://icon.svg" id="3_xc7sl"]
+[ext_resource type="Script" path="res://scripts/Cursor.gd" id="5_0qxb0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8v5q3"]
 
@@ -10,18 +12,17 @@
 
 [node name="Node2D" type="Node2D"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(425, 199)
 scale = Vector2(5, 5)
 script = ExtResource("1_d6v8v")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
 position = Vector2(0, 2)
 texture = ExtResource("1_2trat")
 vframes = 6
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-scale = Vector2(1, 1)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 shape = SubResource("CapsuleShape2D_8v5q3")
 
 [node name="Floor" type="StaticBody2D" parent="."]
@@ -34,3 +35,9 @@ texture = ExtResource("3_xc7sl")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
 scale = Vector2(6, 6)
 shape = SubResource("RectangleShape2D_cqcn7")
+
+[node name="Cursor" type="Sprite2D" parent="."]
+position = Vector2(492, 100)
+scale = Vector2(3, 3)
+texture = ExtResource("3_5f2t5")
+script = ExtResource("5_0qxb0")
