@@ -1,25 +1,30 @@
 extends Sprite2D
 
 @export var radius = 100
-@onready var player: CharacterBody2D = $"../Player"
 
+@onready var player: CharacterBody2D = $"../Player"
 var last_position_inside: Vector2 
 
 func _ready():
 	pass
 	#Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
-
-# Properties
-# Properties
-
-
 # Internal variables
 var angle : float = 0  # Current angle of rotation in radians
 var rotation_speed = 12.0  # Adjust this value as needed
 
 func _process(delta):
-	# Get the position of the player
+	if Input.is_action_pressed("aim"):
+		visible = true
+		show_cursor_aim(delta)
+	else:
+		visible = false
+
+		
+
+
+func show_cursor_aim(delta): 
+		# Get the position of the player
 	var player_pos = player.position
 	var mouse_pos: Vector2 = get_global_mouse_position()
 	# Calculate the direction from the player to this object
@@ -37,5 +42,4 @@ func _process(delta):
 	
 	# Set the position of the sprite
 	position = Vector2(x, y)
-
 
