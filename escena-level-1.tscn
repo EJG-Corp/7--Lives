@@ -233,13 +233,28 @@ position = Vector2(570, 433)
 script = ExtResource("2_ujr41")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
-position = Vector2(0, 2)
+position = Vector2(43, -2)
 texture = ExtResource("3_uynvw")
 vframes = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-visible = false
+position = Vector2(43, -4)
 shape = SubResource("CapsuleShape2D_8v5q3")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(141, -132)
+zoom = Vector2(2, 2)
+process_callback = 0
+limit_left = 350
+limit_bottom = 500
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.03
+drag_top_margin = 0.54
+drag_right_margin = 0.75
+drag_bottom_margin = 0.08
 
 [node name="Cursor" type="Sprite2D" parent="."]
 position = Vector2(492, 100)
@@ -255,7 +270,3 @@ anim_player = NodePath("../AnimationPlayer")
 libraries = {
 "": SubResource("AnimationLibrary_tdff4")
 }
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(711, 445)
-zoom = Vector2(2, 2)
