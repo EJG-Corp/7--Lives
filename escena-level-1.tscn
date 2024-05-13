@@ -1,10 +1,9 @@
-[gd_scene load_steps=24 format=3 uid="uid://86306uk7nvus"]
+[gd_scene load_steps=21 format=3 uid="uid://86306uk7nvus"]
 
 [ext_resource type="Texture2D" uid="uid://dt0gwfdk1488l" path="res://assets/Ruins/tiles.png" id="1_kw4gw"]
 [ext_resource type="Script" path="res://scripts/MovementPlayer.gd" id="2_ujr41"]
 [ext_resource type="Texture2D" uid="uid://dl0iejxa7ecfh" path="res://assets/Meow Knight/SpriteSheet Horizontal.png" id="3_ufnv0"]
 [ext_resource type="Texture2D" uid="uid://bxk8gyw1xa0b8" path="res://assets/cursor.png" id="4_cdu1u"]
-[ext_resource type="Texture2D" uid="uid://w1wpsjls0f17" path="res://assets/Meow Knight/Meow-Knight_Death.png" id="4_ry5t4"]
 [ext_resource type="Script" path="res://scripts/Cursor.gd" id="5_bgn6p"]
 [ext_resource type="Texture2D" uid="uid://b5qikgrmq80eu" path="res://icon.svg" id="6_3mixu"]
 
@@ -174,7 +173,6 @@ sources/0 = SubResource("TileSetAtlasSource_4efqv")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r763a"]
 
-<<<<<<< Updated upstream
 [sub_resource type="Animation" id="Animation_kpykf"]
 resource_name = "Idle"
 length = 0.55
@@ -207,8 +205,6 @@ tracks/0/keys = {
 "values": [8]
 }
 
-=======
->>>>>>> Stashed changes
 [sub_resource type="Animation" id="Animation_laux3"]
 resource_name = "Idle"
 length = 0.75
@@ -216,11 +212,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-<<<<<<< Updated upstream
 tracks/0/path = NodePath("Player/Node2D/Sprite2D:frame")
-=======
-tracks/0/path = NodePath("Player/Idle_Run:frame")
->>>>>>> Stashed changes
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -230,86 +222,13 @@ tracks/0/keys = {
 "values": [8, 8, 9, 10, 11, 12, 13, 14]
 }
 
-<<<<<<< Updated upstream
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b6bt0"]
 _data = {
-=======
-[sub_resource type="Animation" id="Animation_kk3gq"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Player/Idle_Run:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [8]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Player/Death:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_kpykf"]
-resource_name = "Idle"
-length = 0.55
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Player/Idle_Run:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5]
-}
-
-[sub_resource type="Animation" id="Animation_3khce"]
-resource_name = "Death"
-length = 0.6
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Player/Death:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_b6bt0"]
-_data = {
-"Death": SubResource("Animation_3khce"),
->>>>>>> Stashed changes
 "Idle": SubResource("Animation_kpykf"),
 "RESET": SubResource("Animation_kk3gq"),
 "Run": SubResource("Animation_laux3")
 }
 
-<<<<<<< Updated upstream
-=======
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_osmdo"]
-animation = &"Death"
-
->>>>>>> Stashed changes
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7olue"]
 animation = &"Idle"
 
@@ -321,27 +240,15 @@ advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_u5w8m"]
 
-<<<<<<< Updated upstream
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_nrnvu"]
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_00yjk"]
-=======
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5mchh"]
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_00yjk"]
-states/Death/node = SubResource("AnimationNodeAnimation_osmdo")
-states/Death/position = Vector2(658, 184)
->>>>>>> Stashed changes
 states/Idle/node = SubResource("AnimationNodeAnimation_7olue")
 states/Idle/position = Vector2(330, 100)
 states/Run/node = SubResource("AnimationNodeAnimation_staqg")
 states/Run/position = Vector2(480, 100)
 states/Start/position = Vector2(187, 100)
-<<<<<<< Updated upstream
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_7cqa3"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_u5w8m"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_nrnvu")]
-=======
-transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_7cqa3"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_u5w8m"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_5mchh")]
->>>>>>> Stashed changes
 
 [node name="Node2D" type="Node2D"]
 
@@ -355,23 +262,14 @@ layer_0/tile_data = PackedInt32Array(3735612, 393216, 1, 3735613, 393216, 1, 373
 position = Vector2(570, 433)
 script = ExtResource("2_ujr41")
 
-<<<<<<< Updated upstream
 [node name="Node2D" type="Node2D" parent="Player"]
 
 [node name="Sprite2D" type="Sprite2D" parent="Player/Node2D"]
-=======
-[node name="Idle_Run" type="Sprite2D" parent="Player"]
->>>>>>> Stashed changes
 position = Vector2(43, -2)
 texture = ExtResource("3_ufnv0")
 hframes = 8
 vframes = 2
 frame = 8
-
-[node name="Death" type="Sprite2D" parent="Player"]
-position = Vector2(-1, -9)
-texture = ExtResource("4_ry5t4")
-vframes = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(43, -2)
@@ -408,7 +306,6 @@ texture = ExtResource("6_3mixu")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Next_Level/Area2D"]
 shape = SubResource("RectangleShape2D_r763a")
 
-<<<<<<< Updated upstream
 [node name="AnimationTree" type="AnimationTree" parent="."]
 unique_name_in_owner = true
 root_node = NodePath("%AnimationTree/..")
@@ -418,13 +315,7 @@ libraries = {
 tree_root = SubResource("AnimationNodeStateMachine_00yjk")
 anim_player = NodePath("../AnimationPlayer")
 
-=======
->>>>>>> Stashed changes
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_b6bt0")
 }
-
-[node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource("AnimationNodeStateMachine_00yjk")
-anim_player = NodePath("../AnimationPlayer")
