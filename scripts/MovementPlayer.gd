@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var speed = 300
 var jump_speed = 300
-var gravity = 900
+var gravity = 800
 var acceleration = 2000
 
 @onready var pivot : Node2D = %Pivot
@@ -19,6 +19,12 @@ func _physics_process(delta:float) -> void:
 	var move_input = Input.get_axis("move_left","move_right")
 	velocity.x = move_toward(velocity.x,move_input*speed,acceleration*delta)
 	
+	
+	handle_animation(move_input)
+	move_and_slide()
+
+
+func handle_animation(move_input):
 	if is_on_floor():
 		
 		if abs(velocity.x) > 10 or move_input != 0:
@@ -29,14 +35,8 @@ func _physics_process(delta:float) -> void:
 		if move_input :
 			pivot.scale.x = sign(move_input)
 	
-
-	#handle_animation()
-	move_and_slide()
-
-
-func handle_animation():
-	if is_on_floor():
-		if abs(velocity.x) > 10 :
-			playback.travel("Run")
-		else:
-			playback.travel("Idle")
+	else:
+		if velocity.y < 0 :
+			playback.travel("Jump")
+		elif velocity.y > 0 :
+			playback.travel("Falling")
