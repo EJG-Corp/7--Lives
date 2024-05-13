@@ -69,18 +69,6 @@ sources/0 = SubResource("TileSetAtlasSource_4efqv")
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2sfg4"]
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7ovmh"]
-animation = &"idle"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1xf2q"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_jiegu"]
-states/Start/position = Vector2(213, 100)
-states/idle/node = SubResource("AnimationNodeAnimation_7ovmh")
-states/idle/position = Vector2(456, 100)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_1xf2q")]
-
 [sub_resource type="Animation" id="Animation_kxp1m"]
 length = 0.6
 tracks/0/type = "value"
@@ -119,7 +107,19 @@ _data = {
 "idle": SubResource("Animation_6gmt2")
 }
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7ovmh"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1xf2q"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_jiegu"]
+states/Start/position = Vector2(213, 100)
+states/idle/node = SubResource("AnimationNodeAnimation_7ovmh")
+states/idle/position = Vector2(456, 100)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_1xf2q")]
+
+[node name="Node2D2" type="Node2D"]
 
 [node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2(716, 474)
@@ -162,6 +162,9 @@ texture = ExtResource("3_5f2t5")
 script = ExtResource("5_0qxb0")
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_tdff4")
+}
 tree_root = SubResource("AnimationNodeStateMachine_jiegu")
 anim_player = NodePath("../AnimationPlayer")
 
