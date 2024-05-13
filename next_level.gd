@@ -1,15 +1,18 @@
-extends Sprite2D
+extends Area2D
 
+var entered = false
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
+func _on_body_entered(_body : PhysicsBody2D):
+	entered = true
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func _on_body_exited(_body):
+	entered = false
 
-func on_Hitbox_area_entered(area : Area2D) -> void:
-	if area.is_in_group("Player"):
-		pass
+
+func _process(_delta):
+	if entered == true:
+		# Si queremos cambiar presionando un boton usar esta condicion
+		#if Input.is_action_just_pressed("move_left"):
+		get_tree().change_scene_to_file("res://level_2.tscn")

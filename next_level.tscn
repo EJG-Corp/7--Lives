@@ -6,11 +6,13 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r763a"]
 
 [node name="Next_Level" type="Sprite2D"]
-position = Vector2(270, 240)
 texture = ExtResource("1_ejv6y")
-script = ExtResource("2_cwxuk")
 
 [node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_cwxuk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_r763a")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
