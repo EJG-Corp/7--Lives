@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bqsx7dyef6e31"]
+[gd_scene load_steps=21 format=3 uid="uid://2x7yo1ncmr54"]
 
 [ext_resource type="Texture2D" uid="uid://c3l28sli3t8k5" path="res://assets/Meow Knight/Meow-Knight_Idle.png" id="1_2trat"]
 [ext_resource type="Script" path="res://scripts/MovementPlayer.gd" id="1_d6v8v"]
@@ -69,6 +69,18 @@ sources/0 = SubResource("TileSetAtlasSource_4efqv")
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2sfg4"]
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7ovmh"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1xf2q"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_jiegu"]
+states/Start/position = Vector2(213, 100)
+states/idle/node = SubResource("AnimationNodeAnimation_7ovmh")
+states/idle/position = Vector2(456, 100)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_1xf2q")]
+
 [sub_resource type="Animation" id="Animation_kxp1m"]
 length = 0.6
 tracks/0/type = "value"
@@ -106,18 +118,6 @@ _data = {
 "RESET": SubResource("Animation_kxp1m"),
 "idle": SubResource("Animation_6gmt2")
 }
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7ovmh"]
-animation = &"idle"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1xf2q"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_jiegu"]
-states/Start/position = Vector2(213, 100)
-states/idle/node = SubResource("AnimationNodeAnimation_7ovmh")
-states/idle/position = Vector2(456, 100)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_1xf2q")]
 
 [node name="Node2D2" type="Node2D"]
 
@@ -162,9 +162,6 @@ texture = ExtResource("3_5f2t5")
 script = ExtResource("5_0qxb0")
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_tdff4")
-}
 tree_root = SubResource("AnimationNodeStateMachine_jiegu")
 anim_player = NodePath("../AnimationPlayer")
 

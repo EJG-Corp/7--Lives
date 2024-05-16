@@ -26,17 +26,18 @@ func _physics_process(delta:float) -> void:
 
 func handle_animation(move_input):
 	if is_on_floor():
-		
 		if abs(velocity.x) > 10 or move_input != 0:
 			playback.travel("Run")
 		else:
 			playback.travel("Idle")
-		
-		if move_input :
-			pivot.scale.x = sign(move_input)
-	
 	else:
 		if velocity.y < 0 :
 			playback.travel("Jump")
-		elif velocity.y > 0 :
-			playback.travel("Falling")
+		else:
+			playback.travel("Fall")
+		
+	# Rotate the character
+	if move_input:
+		pivot.scale.x = sign(move_input)
+	
+

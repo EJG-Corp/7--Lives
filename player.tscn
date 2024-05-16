@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfua31d25rqto"]
+
+[ext_resource type="Script" path="res://scripts/MovementPlayer.gd" id="1_r543k"]
+[ext_resource type="Texture2D" uid="uid://c3l28sli3t8k5" path="res://assets/Meow Knight/Meow-Knight_Idle.png" id="2_p6aoj"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8v5q3"]
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(425, 199)
+scale = Vector2(5, 5)
+script = ExtResource("1_r543k")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 2)
+texture = ExtResource("2_p6aoj")
+vframes = 6
+frame = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_8v5q3")
