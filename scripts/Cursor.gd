@@ -2,6 +2,7 @@ extends Sprite2D
 
 @export var radius = 100
 @onready var player: CharacterBody2D = $"../Player"
+@onready var level_controller = %LevelController
 
 @export var bullet_scene: PackedScene
 
@@ -32,11 +33,18 @@ func spawn_bullet():
 	if not bullet_scene:
 		return
 	var bullet = bullet_scene.instantiate()
+
 	get_parent().add_child(bullet)
+	
+	bullet.bullet_collided.connect(_on_bullet_collided)
+	
 	# Position and Rotation
 	if coordinate_bullet != Vector2.ZERO:
 		bullet.global_position = coordinate_bullet
 	bullet.rotation = angle_to_player
+	
+func _on_bullet_collided(position):
+	level_controller.set_spawn_point(position)
 
 func show_cursor_aim(delta): 
 	# Position Player and Mouse
