@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://dosh8nworhlqu"]
+[gd_scene load_steps=41 format=3 uid="uid://dosh8nworhlqu"]
 
 [ext_resource type="Texture2D" uid="uid://dt0gwfdk1488l" path="res://assets/Ruins/tiles.png" id="1_kw4gw"]
 [ext_resource type="Script" path="res://scripts/MovementPlayer.gd" id="2_ujr41"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bxk8gyw1xa0b8" path="res://assets/cursor.png" id="4_cdu1u"]
 [ext_resource type="Script" path="res://scripts/Cursor.gd" id="5_bgn6p"]
 [ext_resource type="PackedScene" uid="uid://cvist8ohqih3f" path="res://next_level.tscn" id="6_3mtph"]
+[ext_resource type="PackedScene" uid="uid://uuo37wx1l3y3" path="res://scenes/bullet.tscn" id="6_v2v27"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4efqv"]
 texture = ExtResource("1_kw4gw")
@@ -444,9 +445,10 @@ drag_bottom_margin = 0.08
 
 [node name="Cursor" type="Sprite2D" parent="."]
 position = Vector2(492, 100)
-scale = Vector2(3, 3)
 texture = ExtResource("4_cdu1u")
 script = ExtResource("5_bgn6p")
+radius = 50
+bullet_scene = ExtResource("6_v2v27")
 
 [node name="Next_Level" parent="." instance=ExtResource("6_3mtph")]
 position = Vector2(842, 291)
