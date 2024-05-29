@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2a8m71pr4l7s"]
+
+[ext_resource type="Texture2D" uid="uid://buwsnjai5jik8" path="res://assets/Mechanic/cursor.png" id="1_sqivm"]
+[ext_resource type="Script" path="res://scripts/Cursor.gd" id="2_ntych"]
+[ext_resource type="PackedScene" uid="uid://uuo37wx1l3y3" path="res://scenes/bullet.tscn" id="3_2rdg8"]
+
+[node name="Cursor" type="Sprite2D"]
+position = Vector2(492, 100)
+texture = ExtResource("1_sqivm")
+script = ExtResource("2_ntych")
+radius = 50
+bullet_scene = ExtResource("3_2rdg8")

@@ -3,6 +3,9 @@ extends CharacterBody2D
 @onready var pivot : Node2D = $Pivot
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var playback = animation_tree.get("parameters/playback")
+@onready var camera_2d = $Camera2D
+
+signal cat_died
 
 var speed = 300
 var jump_speed = 300
@@ -49,7 +52,10 @@ func handle_animation_movement(move_input):
 	
 func handle_respawn():
 	if Input.is_action_just_pressed("respawn"):
+		emit_signal("cat_died")
 		playback.travel("Die")
-		
-		
 		player_alive = false
+		
+func disable_camera():
+	camera_2d.queue_free()
+	

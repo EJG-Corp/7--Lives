@@ -1,7 +1,10 @@
-[gd_scene load_steps=39 format=3 uid="uid://cbrwhpmf24so6"]
+[gd_scene load_steps=42 format=3 uid="uid://dug1ljgw1qj3k"]
 
 [ext_resource type="Script" path="res://scripts/MovementPlayer.gd" id="1_hwwhk"]
-[ext_resource type="Texture2D" uid="uid://dl0iejxa7ecfh" path="res://assets/Meow Knight/SpriteSheet Horizontal.png" id="2_x25cc"]
+[ext_resource type="Texture2D" uid="uid://dkqvwgjwbeigt" path="res://assets/Meow Knight/SpriteSheet Horizontal3.png" id="2_fuily"]
+[ext_resource type="Texture2D" uid="uid://buwsnjai5jik8" path="res://assets/Mechanic/cursor.png" id="3_e1ffi"]
+[ext_resource type="Script" path="res://scripts/CursorPlayer.gd" id="4_0w5yg"]
+[ext_resource type="PackedScene" uid="uid://uuo37wx1l3y3" path="res://scenes/bullet.tscn" id="5_rit4u"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jf861"]
 animation = &"Die"
@@ -91,7 +94,7 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Player/Pivot/Idle-Run:frame_coords")
+tracks/0/path = NodePath("Neno/Pivot/Idle-Run:frame_coords")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -108,7 +111,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Player/Pivot/Idle-Run:frame_coords")
+tracks/0/path = NodePath("Neno/Pivot/Idle-Run:frame_coords")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -125,7 +128,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Player/Pivot/Idle-Run:frame")
+tracks/0/path = NodePath("Neno/Pivot/Idle-Run:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -142,7 +145,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Player/Pivot/Idle-Run:frame_coords")
+tracks/0/path = NodePath("Neno/Pivot/Idle-Run:frame_coords")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -158,7 +161,7 @@ length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Player/Pivot/Idle-Run:frame_coords")
+tracks/0/path = NodePath("Neno/Pivot/Idle-Run:frame_coords")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -173,7 +176,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Player/Pivot/Idle-Run:frame")
+tracks/0/path = NodePath("Neno/Pivot/Idle-Run:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -185,7 +188,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Player/Pivot/Idle-Run:frame_coords")
+tracks/1/path = NodePath("Neno/Pivot/Idle-Run:frame_coords")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -203,7 +206,7 @@ step = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Player/Pivot/Idle-Run:frame")
+tracks/0/path = NodePath("Neno/Pivot/Idle-Run:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -220,7 +223,7 @@ step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Player/Pivot/Idle-Run:frame_coords")
+tracks/0/path = NodePath("Neno/Pivot/Idle-Run:frame_coords")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -237,7 +240,7 @@ step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Player/Pivot/Idle-Run:frame_coords")
+tracks/0/path = NodePath("Neno/Pivot/Idle-Run:frame_coords")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -264,8 +267,7 @@ _data = {
 radius = 7.35291
 height = 23.5294
 
-[node name="Player" type="CharacterBody2D"]
-position = Vector2(562, 432)
+[node name="Neno" type="CharacterBody2D"]
 script = ExtResource("1_hwwhk")
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
@@ -282,10 +284,9 @@ libraries = {
 [node name="Pivot" type="Node2D" parent="."]
 
 [node name="Idle-Run" type="Sprite2D" parent="Pivot"]
-texture = ExtResource("2_x25cc")
+texture = ExtResource("2_fuily")
 hframes = 10
 vframes = 4
-frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.68, 0.68)
@@ -306,3 +307,9 @@ drag_left_margin = 0.03
 drag_top_margin = 0.9
 drag_right_margin = 0.75
 drag_bottom_margin = 0.08
+
+[node name="Cursor" type="Sprite2D" parent="."]
+texture = ExtResource("3_e1ffi")
+script = ExtResource("4_0w5yg")
+radius = 30
+bullet_scene = ExtResource("5_rit4u")

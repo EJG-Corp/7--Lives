@@ -25,5 +25,3 @@ func create_spawn_point():
 	get_parent().add_child(current_spawn_point)
 	current_spawn_point.global_position = last_position_bullet
 	
-	
-		

@@ -11,6 +11,7 @@ func _ready():
 
 func _physics_process(delta):
 	position += speed * transform.x * delta 
+
 	
 func _on_body_entered(body: Node2D):
 	emit_signal("bullet_collided", position)
