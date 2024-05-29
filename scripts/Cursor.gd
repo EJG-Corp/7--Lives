@@ -48,7 +48,7 @@ func _on_bullet_collided(position):
 
 func show_cursor_aim(delta): 
 	# Position Player and Mouse
-	var player_pos = player.position
+	var player_pos = player.posidddtion
 	var mouse_pos: Vector2 = get_global_mouse_position()
 	
 	var direction = mouse_pos - player_pos

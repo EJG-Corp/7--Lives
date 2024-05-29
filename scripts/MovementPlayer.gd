@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-@onready var pivot : Node2D = get_node("%Pivot")
-@onready var animation_tree: AnimationTree = %AnimationTree
+@onready var pivot : Node2D = $Pivot
+@onready var animation_tree: AnimationTree = $AnimationTree
 @onready var playback = animation_tree.get("parameters/playback")
 
 var speed = 300
