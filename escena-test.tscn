@@ -119,7 +119,7 @@ _data = {
 "idle": SubResource("Animation_6gmt2")
 }
 
-[node name="Node2D2" type="Node2D"]
+[node name="Node2D3" type="Node2D"]
 
 [node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2(716, 474)
