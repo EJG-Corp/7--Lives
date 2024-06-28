@@ -55,7 +55,11 @@ func handle_respawn():
 		emit_signal("cat_died")
 		playback.travel("Die")
 		player_alive = false
-		
+
+func get_camera2d():
+	return camera_2d
+	
+	
 func disable_camera():
 	camera_2d.queue_free()
 	

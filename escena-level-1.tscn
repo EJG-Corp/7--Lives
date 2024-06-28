@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dosh8nworhlqu"]
+[gd_scene load_steps=15 format=3 uid="uid://dosh8nworhlqu"]
 
 [ext_resource type="Script" path="res://scripts/LevelController.gd" id="1_ign0f"]
 [ext_resource type="Texture2D" uid="uid://dt0gwfdk1488l" path="res://assets/Ruins/tiles.png" id="1_kw4gw"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c2qxnlk73kiv6" path="res://assets/Background/2.png" id="10_k6w5w"]
 [ext_resource type="Texture2D" uid="uid://bgyq1x2ncuk7m" path="res://assets/Background/3.png" id="11_nigql"]
 [ext_resource type="Texture2D" uid="uid://gecanenaxt4y" path="res://assets/Background/4.png" id="12_dvvlh"]
+[ext_resource type="Script" path="res://scripts/CameraTransition.gd" id="12_f0bg6"]
 [ext_resource type="PackedScene" uid="uid://c8nsu3xni1t2u" path="res://scenes/Players/Archer.tscn" id="13_gx546"]
 [ext_resource type="Script" path="res://scripts/PlayerManager.gd" id="14_ccdu6"]
 
@@ -240,3 +241,7 @@ cats = Array[PackedScene]([ExtResource("13_gx546"), ExtResource("4_b400d"), ExtR
 [node name="SpawnPoint" type="Marker2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(34, 434)
+
+[node name="CameraTransitionManager" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("12_f0bg6")
