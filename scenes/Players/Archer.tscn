@@ -287,7 +287,7 @@ libraries = {
 texture = ExtResource("2_lvlhq")
 hframes = 10
 vframes = 4
-frame = 3
+frame = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.68, 0.68)

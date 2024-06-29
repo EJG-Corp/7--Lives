@@ -287,11 +287,17 @@ libraries = {
 texture = ExtResource("2_fuily")
 hframes = 10
 vframes = 4
-frame = 4
+frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.68, 0.68)
 shape = SubResource("CapsuleShape2D_8v5q3")
+
+[node name="Cursor" type="Sprite2D" parent="."]
+texture = ExtResource("3_e1ffi")
+script = ExtResource("4_0w5yg")
+radius = 30
+bullet_scene = ExtResource("5_rit4u")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(141, -132)
@@ -308,9 +314,3 @@ drag_left_margin = 0.03
 drag_top_margin = 0.9
 drag_right_margin = 0.75
 drag_bottom_margin = 0.08
-
-[node name="Cursor" type="Sprite2D" parent="."]
-texture = ExtResource("3_e1ffi")
-script = ExtResource("4_0w5yg")
-radius = 30
-bullet_scene = ExtResource("5_rit4u")
