@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dbgoney20isxx"]
+[gd_scene load_steps=7 format=3 uid="uid://bujk8xahh8cd7"]
 
 [ext_resource type="Texture2D" uid="uid://c3l28sli3t8k5" path="res://assets/Meow Knight/Meow-Knight_Idle.png" id="1_2trat"]
 [ext_resource type="Script" path="res://scripts/MovementPlayer.gd" id="1_d6v8v"]
