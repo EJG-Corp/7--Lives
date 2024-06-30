@@ -180,14 +180,12 @@ sources/0 = SubResource("TileSetAtlasSource_4efqv")
 [node name="Template Level" type="Node2D"]
 
 [node name="SpawnPoint" type="Marker2D" parent="."]
-unique_name_in_owner = true
 position = Vector2(34, 434)
 
 [node name="SpawnPoint" type="Marker2D" parent="SpawnPoint"]
 position = Vector2(34, 434)
 
 [node name="LevelController" type="Node2D" parent="."]
-unique_name_in_owner = true
 visible = false
 script = ExtResource("1_vx4x8")
 spawn_point_scene = ExtResource("2_6ab6x")
@@ -197,7 +195,6 @@ script = ExtResource("9_axh6r")
 cats = Array[PackedScene]([ExtResource("10_idgp6"), ExtResource("11_b8ukh"), ExtResource("12_xxm4h")])
 
 [node name="CameraTransitionController" type="Node2D" parent="."]
-unique_name_in_owner = true
 script = ExtResource("13_6qaul")
 
 [node name="Traps" type="Node2D" parent="."]

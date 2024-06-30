@@ -2,9 +2,9 @@ extends Node2D
 
 
 @export var cats: Array[PackedScene] = []
-@onready var spawn_point = %SpawnPoint
-@onready var level_controller = %LevelController
-@onready var camera_transition_manager = %CameraTransitionManager
+@onready var spawn_point = $"../SpawnPoint"
+@onready var level_controller = $"../LevelController"
+@onready var camera_transition_manager = $"../CameraTransitionController"
 
 
 var current_cat_index = 0

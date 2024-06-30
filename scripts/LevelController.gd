@@ -2,7 +2,7 @@ extends Node2D
 
 var last_position_bullet: Vector2 = Vector2.ZERO
 var can_respawn = false
-@onready var spawn_point = %SpawnPoint
+@onready var spawn_point = $"../SpawnPoint"
 @export var spawn_point_scene: PackedScene
 @onready var traps = $"../Traps"
 
