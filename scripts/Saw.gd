@@ -14,3 +14,5 @@ func _process(delta):
 	path.progress_ratio += delta * speed
 
 
+
+

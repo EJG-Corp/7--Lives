@@ -1,10 +1,10 @@
-[gd_scene load_steps=42 format=3 uid="uid://c8nsu3xni1t2u"]
+[gd_scene load_steps=42 format=3 uid="uid://dqc103isw4duq"]
 
-[ext_resource type="Script" path="res://scripts/MovementPlayer.gd" id="1_tiohs"]
-[ext_resource type="Texture2D" uid="uid://dl0iejxa7ecfh" path="res://assets/Meow Knight/SpriteSheet Horizontal.png" id="2_lvlhq"]
-[ext_resource type="Texture2D" uid="uid://buwsnjai5jik8" path="res://assets/Mechanic/cursor.png" id="3_yiejc"]
-[ext_resource type="Script" path="res://scripts/CursorPlayer.gd" id="4_j6sf5"]
-[ext_resource type="PackedScene" uid="uid://uuo37wx1l3y3" path="res://scenes/bullet.tscn" id="5_u46yx"]
+[ext_resource type="Script" path="res://scripts/MovementPlayer.gd" id="1_en4u5"]
+[ext_resource type="Texture2D" uid="uid://bv0i0ro7nq8i8" path="res://assets/Meow Knight/SpriteSheet Horizontal2.png" id="2_noqyg"]
+[ext_resource type="Texture2D" uid="uid://buwsnjai5jik8" path="res://assets/Mechanic/cursor.png" id="3_yivt8"]
+[ext_resource type="Script" path="res://scripts/CursorPlayer.gd" id="4_ndjaw"]
+[ext_resource type="PackedScene" uid="uid://uuo37wx1l3y3" path="res://scenes/bullet.tscn" id="5_i5edd"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jf861"]
 animation = &"Die"
@@ -94,7 +94,7 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Archer/Pivot/Idle-Run:frame_coords")
+tracks/0/path = NodePath("Valiente/Pivot/Idle-Run:frame_coords")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -111,7 +111,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Archer/Pivot/Idle-Run:frame_coords")
+tracks/0/path = NodePath("Valiente/Pivot/Idle-Run:frame_coords")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -128,7 +128,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Archer/Pivot/Idle-Run:frame")
+tracks/0/path = NodePath("Valiente/Pivot/Idle-Run:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -145,7 +145,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Archer/Pivot/Idle-Run:frame_coords")
+tracks/0/path = NodePath("Valiente/Pivot/Idle-Run:frame_coords")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -161,7 +161,7 @@ length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Archer/Pivot/Idle-Run:frame_coords")
+tracks/0/path = NodePath("Valiente/Pivot/Idle-Run:frame_coords")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -176,7 +176,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Archer/Pivot/Idle-Run:frame")
+tracks/0/path = NodePath("Valiente/Pivot/Idle-Run:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -188,7 +188,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Archer/Pivot/Idle-Run:frame_coords")
+tracks/1/path = NodePath("Valiente/Pivot/Idle-Run:frame_coords")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -206,7 +206,7 @@ step = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Archer/Pivot/Idle-Run:frame")
+tracks/0/path = NodePath("Valiente/Pivot/Idle-Run:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -223,7 +223,7 @@ step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Archer/Pivot/Idle-Run:frame_coords")
+tracks/0/path = NodePath("Valiente/Pivot/Idle-Run:frame_coords")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -240,7 +240,7 @@ step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Archer/Pivot/Idle-Run:frame_coords")
+tracks/0/path = NodePath("Valiente/Pivot/Idle-Run:frame_coords")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -267,8 +267,8 @@ _data = {
 radius = 7.35291
 height = 23.5294
 
-[node name="Archer" type="CharacterBody2D"]
-script = ExtResource("1_tiohs")
+[node name="Valiente" type="CharacterBody2D"]
+script = ExtResource("1_en4u5")
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 root_node = NodePath("../..")
@@ -284,10 +284,9 @@ libraries = {
 [node name="Pivot" type="Node2D" parent="."]
 
 [node name="Idle-Run" type="Sprite2D" parent="Pivot"]
-texture = ExtResource("2_lvlhq")
+texture = ExtResource("2_noqyg")
 hframes = 10
 vframes = 4
-frame = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.68, 0.68)
@@ -298,7 +297,7 @@ position = Vector2(141, -132)
 zoom = Vector2(2, 2)
 process_callback = 0
 limit_left = 0
-limit_top = 10
+limit_top = 2
 limit_right = 1030
 limit_bottom = 500
 position_smoothing_enabled = true
@@ -311,7 +310,7 @@ drag_right_margin = 0.75
 drag_bottom_margin = 0.08
 
 [node name="Cursor" type="Sprite2D" parent="."]
-texture = ExtResource("3_yiejc")
-script = ExtResource("4_j6sf5")
+texture = ExtResource("3_yivt8")
+script = ExtResource("4_ndjaw")
 radius = 30
-bullet_scene = ExtResource("5_u46yx")
+bullet_scene = ExtResource("5_i5edd")

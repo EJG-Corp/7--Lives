@@ -20,10 +20,4 @@ func _on_area_2d_body_entered(body):
 		# Destruimos la instancia de este piso porque no se regenera
 		$Area2D.queue_free()
 		$StaticBody2D.queue_free()
-		
-# Función ready
-func _ready():
-	pass
 
-func _process(delta):
-	pass

@@ -51,14 +51,14 @@ func handle_animation_movement(move_input):
 		pivot.scale.x = sign(move_input)
 	
 func handle_respawn():
-	if Input.is_action_just_pressed("respawn"):
-		emit_signal("cat_died")
-		playback.travel("Die")
-		player_alive = false
+	if player_alive:
+		if Input.is_action_just_pressed("respawn"):
+			emit_signal("cat_died")
+			playback.travel("Die")
+			player_alive = false
 
 func get_camera2d():
 	return camera_2d
-	
 	
 func disable_camera():
 	camera_2d.queue_free()

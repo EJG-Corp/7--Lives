@@ -260,3 +260,5 @@ position = Vector2(160, 440)
 
 [node name="MovingPlatform" parent="." instance=ExtResource("16_fa0t8")]
 position = Vector2(632, 424)
+
+[node name="Traps" type="Node2D" parent="."]

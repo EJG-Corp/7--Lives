@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://b1f3hciy8cnx7"]
+[gd_scene load_steps=10 format=3 uid="uid://b1f3hciy8cnx7"]
 
 [ext_resource type="Script" path="res://scripts/FireTrap.gd" id="1_c1327"]
 [ext_resource type="Texture2D" uid="uid://bkbb6dotpwtwn" path="res://assets/Trap/Fire.png" id="1_fx3je"]
+[ext_resource type="Script" path="res://scenes/Traps/FireCollision.gd" id="2_ix4nb"]
 [ext_resource type="Texture2D" uid="uid://bcmymmagpoevf" path="res://assets/Trap/FireBox.png" id="2_m6ewo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d7k7i"]
@@ -124,6 +125,7 @@ _data = {
 script = ExtResource("1_c1327")
 
 [node name="fire" type="Area2D" parent="."]
+script = ExtResource("2_ix4nb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="fire"]
 shape = SubResource("RectangleShape2D_d7k7i")
@@ -149,3 +151,5 @@ hframes = 13
 libraries = {
 "": SubResource("AnimationLibrary_vy3c6")
 }
+
+[connection signal="body_entered" from="fire" to="fire" method="_on_body_entered"]

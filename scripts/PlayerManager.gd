@@ -20,21 +20,20 @@ func _ready():
 func handle_cat_die():
 	
 	# Disable cursor current cat
-	var dead_cat_instance = current_cat
+	var dead_cat_instance = current_cat	
 	current_cat.get_node("Cursor").disable_cursor()
-	current_cat_index = current_cat_index + 1 # We need other cat!
-	# Instance other cat	
-	var next_cat: PackedScene = cats[current_cat_index]
-	# Spawn the next cat and transition camera
 	
-	# Instance cat
-	var cat_instance = next_cat.instantiate()
-	add_child(cat_instance)
-	_handle_cat_instance(cat_instance, level_controller.current_spawn_point.position)
-	transition_camera_between_cats(dead_cat_instance.get_camera2d(), cat_instance.get_camera2d())
+	if len(cats) > current_cat_index + 1: 
+		# Instance other cat
+		current_cat_index = current_cat_index + 1 	
+		var next_cat: PackedScene = cats[current_cat_index]
+		# Instance cat
+		var cat_instance = next_cat.instantiate()
+		add_child(cat_instance)
+		_handle_cat_instance(cat_instance, level_controller.current_spawn_point.position)
+		transition_camera_between_cats(dead_cat_instance.get_camera2d(), cat_instance.get_camera2d())
 
 
-	
 func bullet_colided(position):
 	level_controller.set_spawn_point(position)
 	
@@ -50,10 +49,6 @@ func _handle_cat_instance(cat_instance, position: Vector2):
 
 
 func transition_camera_between_cats(from_camera, to_camera):
-	print("from camera")
-	print(from_camera.global_position)
-	print("to camera")
-	print(to_camera.global_position)
 	camera_transition_manager.transition_camera2D(from_camera, to_camera)
 
 	
