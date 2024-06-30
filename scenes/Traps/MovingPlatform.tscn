@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=3 uid="uid://3hmdat7nujk6"]
+
+[ext_resource type="Texture2D" uid="uid://blcdicnwbucjy" path="res://assets/Trap/Moving Platfrom_A.png" id="1_drpvy"]
+[ext_resource type="Script" path="res://scripts/MovingPlatform.gd" id="1_yra8d"]
+
+[sub_resource type="Curve2D" id="Curve2D_3jwlq"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 48, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8c8dr"]
+size = Vector2(32, 16)
+
+[sub_resource type="Animation" id="Animation_jo0ui"]
+resource_name = "Move"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path2D/PathFollow2D/AnimatableBody2D/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+
+[sub_resource type="Animation" id="Animation_flb4x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path2D/PathFollow2D/AnimatableBody2D/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6n8fq"]
+_data = {
+"Move": SubResource("Animation_jo0ui"),
+"RESET": SubResource("Animation_flb4x")
+}
+
+[node name="MovingPlatform" type="Node2D"]
+script = ExtResource("1_yra8d")
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_3jwlq")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+rotates = false
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="Path2D/PathFollow2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D/AnimatableBody2D"]
+texture = ExtResource("1_drpvy")
+hframes = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/AnimatableBody2D"]
+position = Vector2(0, -0.7)
+scale = Vector2(0.85, 0.6)
+shape = SubResource("RectangleShape2D_8c8dr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6n8fq")
+}

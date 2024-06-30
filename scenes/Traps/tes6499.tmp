@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c2ow1v1u80wtb"]
+[gd_scene load_steps=18 format=3 uid="uid://c2ow1v1u80wtb"]
 
 [ext_resource type="Script" path="res://scripts/LevelController.gd" id="1_kak6c"]
 [ext_resource type="PackedScene" uid="uid://dww8jv2cxerjl" path="res://scenes/spawn_point.tscn" id="2_eaaa6"]
@@ -15,7 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://c53p4tojmxcx0" path="res://scenes/Traps/Saw.tscn" id="13_4a66v"]
 [ext_resource type="PackedScene" uid="uid://b1f3hciy8cnx7" path="res://scenes/Traps/FireTrap.tscn" id="14_4ufq4"]
 [ext_resource type="PackedScene" uid="uid://tp7n4vmfsh6c" path="res://scenes/Traps/FallingFloor.tscn" id="15_ls2ag"]
-[ext_resource type="PackedScene" uid="uid://3hmdat7nujk6" path="res://scenes/Traps/MovingPlatform.tscn" id="16_fa0t8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4efqv"]
 texture = ExtResource("3_sbjis")
@@ -257,6 +256,3 @@ position = Vector2(480, 432)
 
 [node name="FallingFloor" parent="." instance=ExtResource("15_ls2ag")]
 position = Vector2(160, 440)
-
-[node name="MovingPlatform" parent="." instance=ExtResource("16_fa0t8")]
-position = Vector2(632, 424)

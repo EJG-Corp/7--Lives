@@ -6,14 +6,15 @@ extends Node2D
 
 func _on_area_2d_body_entered(body):
 	
+	# Debuggin 
 	if body is StaticBody2D :
 		pass
-	# Not working
-	print("Colisionando con :")
-	print(body.name)
-	# En que grupo deberia estar el jugador ? Llamar a la variable global cats ?
+		
+	# Debuggin
+	print("Falling Floor Colisionando con : ", body.name)
+	
+	# El player es un CharacterBody2D .
 	if body is CharacterBody2D:
-		print("Player dead")
 		anim_player.play("FallingFloor")
 		await anim_player.animation_finished
 		# Destruimos la instancia de este piso porque no se regenera
