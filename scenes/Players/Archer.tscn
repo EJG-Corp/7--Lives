@@ -86,7 +86,7 @@ states/StartFalling/position = Vector2(472, -75.9135)
 states/Takeoff/node = SubResource("AnimationNodeAnimation_yx7bb")
 states/Takeoff/position = Vector2(284, 6.0865)
 transitions = ["Idle", "Run", SubResource("AnimationNodeStateMachineTransition_u5w8m"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_nrnvu"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_7cqa3"), "Idle", "Takeoff", SubResource("AnimationNodeStateMachineTransition_mivim"), "Run", "Takeoff", SubResource("AnimationNodeStateMachineTransition_jhtiw"), "Takeoff", "Jump", SubResource("AnimationNodeStateMachineTransition_onqw1"), "Fall", "Land", SubResource("AnimationNodeStateMachineTransition_ukyqu"), "Land", "Idle", SubResource("AnimationNodeStateMachineTransition_rhwbr"), "Land", "Run", SubResource("AnimationNodeStateMachineTransition_wgms1"), "Run", "Fall", SubResource("AnimationNodeStateMachineTransition_toc4h"), "Idle", "Fall", SubResource("AnimationNodeStateMachineTransition_kswsy"), "StartFalling", "Fall", SubResource("AnimationNodeStateMachineTransition_7dccx"), "Jump", "StartFalling", SubResource("AnimationNodeStateMachineTransition_scabl"), "Idle", "Die", SubResource("AnimationNodeStateMachineTransition_54lmr"), "Run", "Die", SubResource("AnimationNodeStateMachineTransition_eclqt"), "Die", "End", SubResource("AnimationNodeStateMachineTransition_jxkg5")]
-graph_offset = Vector2(-50, -81.2368)
+graph_offset = Vector2(-50, 11.8432)
 
 [sub_resource type="Animation" id="Animation_5f227"]
 resource_name = "Die"
@@ -287,7 +287,11 @@ libraries = {
 texture = ExtResource("2_lvlhq")
 hframes = 10
 vframes = 4
+<<<<<<< HEAD
 frame = 4
+=======
+frame = 3
+>>>>>>> feature-traps
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.68, 0.68)
