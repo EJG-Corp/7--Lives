@@ -1,6 +1,6 @@
 extends Node2D
 
-var speed = 1.0
+var speed = 0.3
 
 @onready var path : PathFollow2D = get_node("Path2D/PathFollow2D")
 
