@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://c6g7884cidaev" path="res://resources/theme.tres" id="1_f1a7p"]
 [ext_resource type="Script" path="res://main_menu.gd" id="2_l3sff"]
-[ext_resource type="Texture2D" uid="uid://dtqykseul4ia8" path="res://assets/Menu/menu.png" id="3_t0fqk"]
+[ext_resource type="Texture2D" uid="uid://8vkha3nda2aa" path="res://assets/Menu/menu.png" id="3_t0fqk"]
 
 [node name="main_menu" type="MarginContainer"]
 anchors_preset = 15
