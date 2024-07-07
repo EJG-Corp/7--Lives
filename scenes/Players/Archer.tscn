@@ -1,10 +1,11 @@
-[gd_scene load_steps=42 format=3 uid="uid://c8nsu3xni1t2u"]
+[gd_scene load_steps=43 format=3 uid="uid://c8nsu3xni1t2u"]
 
 [ext_resource type="Script" path="res://scripts/MovementPlayer.gd" id="1_tiohs"]
 [ext_resource type="Texture2D" uid="uid://dl0iejxa7ecfh" path="res://assets/Meow Knight/SpriteSheet Horizontal.png" id="2_lvlhq"]
 [ext_resource type="Texture2D" uid="uid://buwsnjai5jik8" path="res://assets/Mechanic/cursor.png" id="3_yiejc"]
 [ext_resource type="Script" path="res://scripts/CursorPlayer.gd" id="4_j6sf5"]
 [ext_resource type="PackedScene" uid="uid://uuo37wx1l3y3" path="res://scenes/bullet.tscn" id="5_u46yx"]
+[ext_resource type="AudioStream" uid="uid://0tbupyp3uary" path="res://assets/SFX/jump.wav" id="6_japid"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jf861"]
 animation = &"Die"
@@ -140,7 +141,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_x8u3x"]
 resource_name = "Jump"
-length = 0.05
+length = 0.01
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -197,6 +198,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [Vector2i(1, 2)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Archer/AudioStreamPlayer2D:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_laux3"]
 resource_name = "Idle"
@@ -244,10 +257,22 @@ tracks/0/path = NodePath("Archer/Pivot/Idle-Run:frame_coords")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1),
+"times": PackedFloat32Array(0.0179112, 0.0684229, 0.117911),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [Vector2i(0, 2), Vector2i(1, 2), Vector2i(3, 2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Archer/AudioStreamPlayer2D:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.00795783),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b6bt0"]
@@ -287,7 +312,6 @@ libraries = {
 texture = ExtResource("2_lvlhq")
 hframes = 10
 vframes = 4
-frame = 21
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.68, 0.68)
@@ -315,3 +339,7 @@ texture = ExtResource("3_yiejc")
 script = ExtResource("4_j6sf5")
 radius = 30
 bullet_scene = ExtResource("5_u46yx")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_japid")
+volume_db = -25.0
