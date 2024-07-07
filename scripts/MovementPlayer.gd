@@ -13,6 +13,11 @@ var gravity = 800
 var acceleration = 2000
 var player_alive = true
 
+func jump():
+	# Jump Input
+	if is_on_floor() and Input.is_action_just_pressed("jump"):
+		velocity.y = -jump_speed
+
 func _physics_process(delta:float) -> void:
 	handle_respawn()
 	# Gravity 
@@ -20,9 +25,7 @@ func _physics_process(delta:float) -> void:
 		velocity.y += gravity * delta
 	
 	if player_alive: 
-		# Jump Input
-		if is_on_floor() and Input.is_action_just_pressed("jump"):
-			velocity.y = -jump_speed
+		jump()
 
 		# Movement Input	
 		var move_input = Input.get_axis("move_left","move_right")

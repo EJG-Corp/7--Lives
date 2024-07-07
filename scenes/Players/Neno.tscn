@@ -1,6 +1,6 @@
 [gd_scene load_steps=42 format=3 uid="uid://dug1ljgw1qj3k"]
 
-[ext_resource type="Script" path="res://scripts/MovementPlayer.gd" id="1_hwwhk"]
+[ext_resource type="Script" path="res://scripts/power_cats/Neno.gd" id="1_gx12c"]
 [ext_resource type="Texture2D" uid="uid://dkqvwgjwbeigt" path="res://assets/Meow Knight/SpriteSheet Horizontal3.png" id="2_fuily"]
 [ext_resource type="Texture2D" uid="uid://buwsnjai5jik8" path="res://assets/Mechanic/cursor.png" id="3_e1ffi"]
 [ext_resource type="Script" path="res://scripts/CursorPlayer.gd" id="4_0w5yg"]
@@ -268,7 +268,7 @@ radius = 7.35291
 height = 23.5294
 
 [node name="Neno" type="CharacterBody2D"]
-script = ExtResource("1_hwwhk")
+script = ExtResource("1_gx12c")
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 root_node = NodePath("../..")
@@ -287,6 +287,7 @@ libraries = {
 texture = ExtResource("2_fuily")
 hframes = 10
 vframes = 4
+frame = 21
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.68, 0.68)
