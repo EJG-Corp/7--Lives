@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://b73likq1skcmj"]
+
+[ext_resource type="Texture2D" uid="uid://cmyh0vpikrbyg" path="res://assets/UI/r_dark.png" id="1_uvjei"]
+
+[node name="RButton" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_uvjei")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -109.0
+offset_top = -64.0
+offset_right = 141.0
+offset_bottom = -41.0
+text = "Presiona R para resetear el nivel"

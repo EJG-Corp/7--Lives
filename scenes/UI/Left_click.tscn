@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://dk6ud6b6o4r8l"]
+
+[ext_resource type="Texture2D" uid="uid://b2si33ccaa3nl" path="res://assets/UI/left_mouse_button_dark.png" id="1_3r6u8"]
+
+[node name="LeftClick" type="Node2D"]
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture = ExtResource("1_3r6u8")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -77.0
+offset_top = -77.0
+offset_right = 89.0
+offset_bottom = 24.0
+text = "Manten para apuntar
+Suelta para disparar
+
+
+"

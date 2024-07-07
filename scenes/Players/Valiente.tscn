@@ -287,7 +287,7 @@ libraries = {
 texture = ExtResource("2_noqyg")
 hframes = 10
 vframes = 4
-frame = 21
+frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.68, 0.68)
@@ -299,7 +299,7 @@ zoom = Vector2(2, 2)
 process_callback = 0
 limit_left = 0
 limit_top = 2
-limit_right = 1030
+limit_right = 1500
 limit_bottom = 500
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
