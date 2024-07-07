@@ -1,6 +1,6 @@
 [gd_scene load_steps=42 format=3 uid="uid://dqc103isw4duq"]
 
-[ext_resource type="Script" path="res://scripts/MovementPlayer.gd" id="1_en4u5"]
+[ext_resource type="Script" path="res://scripts/power_cats/Valiente.gd" id="1_tnq2b"]
 [ext_resource type="Texture2D" uid="uid://bv0i0ro7nq8i8" path="res://assets/Meow Knight/SpriteSheet Horizontal2.png" id="2_noqyg"]
 [ext_resource type="Texture2D" uid="uid://buwsnjai5jik8" path="res://assets/Mechanic/cursor.png" id="3_yivt8"]
 [ext_resource type="Script" path="res://scripts/CursorPlayer.gd" id="4_ndjaw"]
@@ -268,7 +268,7 @@ radius = 7.35291
 height = 23.5294
 
 [node name="Valiente" type="CharacterBody2D"]
-script = ExtResource("1_en4u5")
+script = ExtResource("1_tnq2b")
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 root_node = NodePath("../..")
@@ -287,7 +287,7 @@ libraries = {
 texture = ExtResource("2_noqyg")
 hframes = 10
 vframes = 4
-frame = 1
+frame = 21
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.68, 0.68)
