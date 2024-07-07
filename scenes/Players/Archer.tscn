@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://buwsnjai5jik8" path="res://assets/Mechanic/cursor.png" id="3_yiejc"]
 [ext_resource type="Script" path="res://scripts/CursorPlayer.gd" id="4_j6sf5"]
 [ext_resource type="PackedScene" uid="uid://uuo37wx1l3y3" path="res://scenes/bullet.tscn" id="5_u46yx"]
-[ext_resource type="AudioStream" uid="uid://0tbupyp3uary" path="res://assets/SFX/jump.wav" id="6_japid"]
+[ext_resource type="AudioStream" path="res://assets/SFX/jump.wav" id="6_japid"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jf861"]
 animation = &"Die"

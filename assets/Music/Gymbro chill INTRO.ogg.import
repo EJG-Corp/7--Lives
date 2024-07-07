@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ic8ftno2lmf6"
+path="res://.godot/imported/Gymbro chill INTRO.ogg-33057ad3660f72c0207e25bc8ad80460.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Music/Gymbro chill INTRO.ogg"
+dest_files=["res://.godot/imported/Gymbro chill INTRO.ogg-33057ad3660f72c0207e25bc8ad80460.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

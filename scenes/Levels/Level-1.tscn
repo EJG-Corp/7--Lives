@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c4v5oty6wukhw"]
+[gd_scene load_steps=22 format=3 uid="uid://c4v5oty6wukhw"]
 
 [ext_resource type="Script" path="res://scripts/LevelController.gd" id="1_uhqd8"]
 [ext_resource type="PackedScene" uid="uid://dww8jv2cxerjl" path="res://scenes/spawn_point.tscn" id="2_bk080"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://dk6ud6b6o4r8l" path="res://scenes/UI/Left_click.tscn" id="15_8hp5l"]
 [ext_resource type="PackedScene" uid="uid://bojh5te1y52d0" path="res://scenes/UI/Right_click.tscn" id="16_v8ufc"]
 [ext_resource type="PackedScene" uid="uid://b73likq1skcmj" path="res://scenes/UI/R_button.tscn" id="17_ikoqo"]
+[ext_resource type="AudioStream" uid="uid://bjq8c8de4ijf2" path="res://assets/Music/MUSIC.wav" id="18_h0qp5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4efqv"]
 texture = ExtResource("8_omp2x")
@@ -278,3 +279,8 @@ scale = Vector2(0.5, 0.5)
 [node name="RButton" parent="." instance=ExtResource("17_ikoqo")]
 position = Vector2(157, 341)
 scale = Vector2(0.5, 0.5)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("18_h0qp5")
+volume_db = -10.0
+autoplay = true
