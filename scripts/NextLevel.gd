@@ -4,6 +4,7 @@ extends Node2D
 @onready var Sprite : Sprite2D = get_node("Area2D/Sprite2D")
 @onready var EscenaActual : String = get_tree (). get_current_scene (). get_name ()
 
+
 func _ready():
 	# Hace que la meta oscile de arriba hacia abajo
 	$AnimationPlayer.play("Move")
