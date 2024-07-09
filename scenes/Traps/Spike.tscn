@@ -138,5 +138,6 @@ libraries = {
 position = Vector2(0, 32)
 stream = ExtResource("3_ryeur")
 volume_db = -16.0
+max_distance = 300.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

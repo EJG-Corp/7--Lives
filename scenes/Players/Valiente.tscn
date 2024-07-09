@@ -311,7 +311,7 @@ libraries = {
 texture = ExtResource("2_noqyg")
 hframes = 10
 vframes = 4
-frame = 21
+frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.68, 0.68)
@@ -339,3 +339,5 @@ texture = ExtResource("3_yivt8")
 script = ExtResource("4_ndjaw")
 radius = 30
 bullet_scene = ExtResource("5_i5edd")
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]

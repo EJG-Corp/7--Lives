@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://c75sf33xtjont"]
+[gd_scene load_steps=21 format=3 uid="uid://c75sf33xtjont"]
 
 [ext_resource type="Texture2D" uid="uid://dattjloj8qa5c" path="res://assets/Background/1.png" id="1_8113h"]
 [ext_resource type="Script" path="res://scripts/Level-3.gd" id="1_qm02p"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://cvuagfk5apujc" path="res://scenes/NextLevel.tscn" id="12_qto6k"]
 [ext_resource type="AudioStream" uid="uid://bjq8c8de4ijf2" path="res://assets/Music/MUSIC.wav" id="13_7cbte"]
 [ext_resource type="Texture2D" uid="uid://dt0gwfdk1488l" path="res://assets/Ruins/tiles.png" id="14_bvaa6"]
+[ext_resource type="FontFile" uid="uid://cmu2sskge75jr" path="res://assets/Fonts/ThaleahFat.ttf" id="16_esbiw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4efqv"]
 texture = ExtResource("14_bvaa6")
@@ -286,11 +287,41 @@ scale = Vector2(150, 5)
 shape = SubResource("RectangleShape2D_01hkm")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 544.0
-offset_top = 56.0
-offset_right = 937.0
-offset_bottom = 79.0
-scale = Vector2(0.5, 0.5)
-text = "Valiente puede saltar mucho más que otros felinos"
+offset_left = 653.0
+offset_top = 269.0
+offset_right = 1046.0
+offset_bottom = 328.0
+scale = Vector2(0.8, 0.8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("16_esbiw")
+text = "Valiente puede
+saltar mucho más
+ que otros felinos"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="LevelInfo" type="Node2D" parent="CanvasLayer"]
+position = Vector2(20, 20)
+scale = Vector2(2, 2)
+
+[node name="Nivel" type="Label" parent="CanvasLayer/LevelInfo"]
+offset_right = 54.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.709917, 0.672575, 0.280017, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("16_esbiw")
+text = "Nivel 3 : 
+"
+
+[node name="Label2" type="Label" parent="CanvasLayer/LevelInfo"]
+offset_left = 71.0
+offset_right = 218.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.709804, 0.67451, 0.278431, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("16_esbiw")
+text = "\"Nombre del Gato\""
 
 [connection signal="body_entered" from="Limites/Limite Inferior" to="." method="_on_limite_inferior_body_entered"]

@@ -21,6 +21,7 @@ func _on_area_2d_body_entered(body):
 	await get_tree().create_timer(0.5).timeout
 	
 	if body is CharacterBody2D:
+		# Cambiamos escena al siguiente nivel
 		var NextLevelLocation : String = "res://scenes/Levels/" + increment_level(EscenaActual) + ".tscn"
 		get_tree().change_scene_to_file(NextLevelLocation)	
 

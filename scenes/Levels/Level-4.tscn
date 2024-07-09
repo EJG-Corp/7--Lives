@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cmtwti7phr46n"]
+[gd_scene load_steps=24 format=3 uid="uid://cmtwti7phr46n"]
 
 [ext_resource type="Texture2D" uid="uid://dattjloj8qa5c" path="res://assets/Background/1.png" id="1_ew1ba"]
 [ext_resource type="Script" path="res://scripts/Level-4.gd" id="1_l720w"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://c53p4tojmxcx0" path="res://scenes/Traps/Saw.tscn" id="15_52sbq"]
 [ext_resource type="PackedScene" uid="uid://0ndkmtlogix7" path="res://scenes/Traps/Spike.tscn" id="15_mqxlk"]
 [ext_resource type="PackedScene" uid="uid://tp7n4vmfsh6c" path="res://scenes/Traps/FallingFloor.tscn" id="16_4jld4"]
+[ext_resource type="FontFile" uid="uid://cmu2sskge75jr" path="res://assets/Fonts/ThaleahFat.ttf" id="19_1h4m2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4efqv"]
 texture = ExtResource("14_c3xys")
@@ -366,5 +367,29 @@ shape = SubResource("RectangleShape2D_n0yar")
 position = Vector2(669, 550)
 scale = Vector2(70, 3)
 shape = SubResource("RectangleShape2D_8ulu8")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="LevelInfo" type="Node2D" parent="CanvasLayer"]
+position = Vector2(20, 20)
+scale = Vector2(2, 2)
+
+[node name="Nivel" type="Label" parent="CanvasLayer/LevelInfo"]
+offset_right = 54.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.709917, 0.672575, 0.280017, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("19_1h4m2")
+text = "Nivel 4 : 
+"
+
+[node name="Label2" type="Label" parent="CanvasLayer/LevelInfo"]
+offset_left = 71.0
+offset_right = 218.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.709804, 0.67451, 0.278431, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("19_1h4m2")
+text = "\"Nombre del Gato\""
 
 [connection signal="body_entered" from="Limites/Area2D" to="." method="_on_area_2d_body_entered"]

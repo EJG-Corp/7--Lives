@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var CurrentCat : String = "" 
+@onready var InfoLevel : Label = get_node("CanvasLayer/LevelInfo/Label2") 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,6 +16,7 @@ func _process(delta):
 				if child is CharacterBody2D:
 					CurrentCat = child.name
 	print(CurrentCat)
+	InfoLevel.text = CurrentCat
 	pass
 
 

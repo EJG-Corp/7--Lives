@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://be73tmu5oyct7"]
+[gd_scene load_steps=6 format=3 uid="uid://be73tmu5oyct7"]
 
 [ext_resource type="Texture2D" uid="uid://c7ujrbg7x83k8" path="res://assets/UI/w_dark.png" id="1_fqb4v"]
 [ext_resource type="Texture2D" uid="uid://byt5scs0gejfl" path="res://assets/UI/a_key_dark.png" id="2_3x82q"]
 [ext_resource type="Texture2D" uid="uid://txkadhnw1so1" path="res://assets/UI/s_dark.png" id="3_pmk0i"]
 [ext_resource type="Texture2D" uid="uid://cmohmd8hgj7vl" path="res://assets/UI/d_dark.png" id="4_x2nvx"]
+[ext_resource type="FontFile" uid="uid://cmu2sskge75jr" path="res://assets/Fonts/ThaleahFat.ttf" id="5_ixt18"]
 
 [node name="Wasd" type="Node2D"]
 
@@ -23,8 +24,12 @@ position = Vector2(40, 0)
 texture = ExtResource("4_x2nvx")
 
 [node name="Label" type="Label" parent="."]
-offset_left = -46.0
-offset_top = -96.0
-offset_right = 47.0
-offset_bottom = -73.0
-text = "Movimiento"
+offset_left = -90.0
+offset_top = -98.0
+offset_right = 3.0
+offset_bottom = -75.0
+scale = Vector2(2, 2)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_ixt18")
+text = "MOVIMIENTO"
+horizontal_alignment = 1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dcato6vfmui0h"]
+[gd_scene load_steps=22 format=3 uid="uid://dcato6vfmui0h"]
 
 [ext_resource type="Script" path="res://scripts/Level-2.gd" id="1_ud4qo"]
 [ext_resource type="Texture2D" uid="uid://dattjloj8qa5c" path="res://assets/Background/1.png" id="2_1xcgx"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://cvuagfk5apujc" path="res://scenes/NextLevel.tscn" id="13_qgija"]
 [ext_resource type="AudioStream" uid="uid://bjq8c8de4ijf2" path="res://assets/Music/MUSIC.wav" id="14_e5hh5"]
 [ext_resource type="Texture2D" uid="uid://dt0gwfdk1488l" path="res://assets/Ruins/tiles.png" id="14_vfu34"]
+[ext_resource type="FontFile" uid="uid://cmu2sskge75jr" path="res://assets/Fonts/ThaleahFat.ttf" id="16_oq6bt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4efqv"]
 texture = ExtResource("14_vfu34")
@@ -287,11 +288,37 @@ scale = Vector2(1, 40)
 shape = SubResource("RectangleShape2D_efu2n")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 414.0
-offset_top = 300.0
-offset_right = 639.0
-offset_bottom = 323.0
-scale = Vector2(0.5, 0.5)
+offset_left = 375.0
+offset_top = 288.0
+offset_right = 600.0
+offset_bottom = 311.0
+scale = Vector2(0.8, 0.8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("16_oq6bt")
 text = "Neno puede escalar paredes "
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="LevelInfo" type="Node2D" parent="CanvasLayer"]
+position = Vector2(20, 20)
+scale = Vector2(2, 2)
+
+[node name="Nivel" type="Label" parent="CanvasLayer/LevelInfo"]
+offset_right = 54.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.709917, 0.672575, 0.280017, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("16_oq6bt")
+text = "Nivel 2 : 
+"
+
+[node name="Label2" type="Label" parent="CanvasLayer/LevelInfo"]
+offset_left = 71.0
+offset_right = 218.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.709804, 0.67451, 0.278431, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("16_oq6bt")
+text = "\"Nombre del Gato\""
 
 [connection signal="body_entered" from="Limites/Limite Inferior - Derecho" to="." method="_on_limite_inferior__derecho_body_entered"]

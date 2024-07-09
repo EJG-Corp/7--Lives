@@ -65,4 +65,4 @@ func get_camera2d():
 	
 func disable_camera():
 	camera_2d.queue_free()
-	
+
