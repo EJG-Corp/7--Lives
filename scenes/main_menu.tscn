@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://8vkha3nda2aa" path="res://assets/Menu/menu.png" id="3_t0fqk"]
 
 [node name="main_menu" type="MarginContainer"]
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -102.0

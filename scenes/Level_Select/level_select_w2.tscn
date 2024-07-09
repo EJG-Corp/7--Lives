@@ -19,7 +19,7 @@ anchor_left = 0.0555556
 anchor_top = 0.790123
 anchor_right = 0.111556
 anchor_bottom = 0.889123
-next_scene_path = "res://main.tscn"
+next_scene_path = "res://scenes/Levels/Level-2.tscn"
 next_level_right = NodePath("../2")
 
 [node name="2" parent="." node_paths=PackedStringArray("next_level_left", "next_level_right") instance=ExtResource("2_fjnbf")]

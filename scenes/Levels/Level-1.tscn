@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://c2qxnlk73kiv6" path="res://assets/Background/2.png" id="10_ppdxd"]
 [ext_resource type="Texture2D" uid="uid://bgyq1x2ncuk7m" path="res://assets/Background/3.png" id="11_1yd5u"]
 [ext_resource type="Texture2D" uid="uid://gecanenaxt4y" path="res://assets/Background/4.png" id="12_w21hv"]
-[ext_resource type="PackedScene" path="res://scenes/NextLevel.tscn" id="14_ernof"]
+[ext_resource type="PackedScene" uid="uid://cvuagfk5apujc" path="res://scenes/NextLevel.tscn" id="14_ernof"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4efqv"]
 texture = ExtResource("8_omp2x")

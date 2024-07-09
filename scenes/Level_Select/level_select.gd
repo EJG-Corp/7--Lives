@@ -27,7 +27,8 @@ func _input(event):
 	
 	if event.is_action_pressed("ui_accept"):
 		if current_level.next_scene_path:
-			print(current_level.next_scene_path)
+			var new_scene = load("res://scenes/Levels/Level-1.tscn")
+			get_tree().change_scene_to_packed(new_scene)
 
 	if event.is_action_pressed("ui_cancel"):
 		get_tree().get_root().add_child(parent_world_select)

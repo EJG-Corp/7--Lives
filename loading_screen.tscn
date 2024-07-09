@@ -11,7 +11,7 @@ gradient = SubResource("Gradient_il0sr")
 
 [node name="LoadingScreen" type="CanvasLayer"]
 script = ExtResource("1_vbi7a")
-next_scene_path = "res://main.tscn"
+next_scene_path = "res://scenes/Levels/Level-2.tscn"
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
