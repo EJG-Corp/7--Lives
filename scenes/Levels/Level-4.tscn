@@ -1,0 +1,89 @@
+[gd_scene load_steps=14 format=3 uid="uid://cmtwti7phr46n"]
+
+[ext_resource type="Texture2D" uid="uid://dattjloj8qa5c" path="res://assets/Background/1.png" id="1_ew1ba"]
+[ext_resource type="Texture2D" uid="uid://c2qxnlk73kiv6" path="res://assets/Background/2.png" id="2_drfaw"]
+[ext_resource type="Texture2D" uid="uid://bgyq1x2ncuk7m" path="res://assets/Background/3.png" id="3_j2e5a"]
+[ext_resource type="Texture2D" uid="uid://gecanenaxt4y" path="res://assets/Background/4.png" id="4_ueexr"]
+[ext_resource type="Script" path="res://scripts/LevelController.gd" id="5_n5owd"]
+[ext_resource type="PackedScene" uid="uid://dww8jv2cxerjl" path="res://scenes/spawn_point.tscn" id="6_m5bpr"]
+[ext_resource type="Script" path="res://scripts/PlayerManager.gd" id="7_pqqle"]
+[ext_resource type="PackedScene" uid="uid://c8nsu3xni1t2u" path="res://scenes/Players/Archer.tscn" id="8_u45v0"]
+[ext_resource type="PackedScene" uid="uid://dug1ljgw1qj3k" path="res://scenes/Players/Neno.tscn" id="9_coyf2"]
+[ext_resource type="PackedScene" uid="uid://dqc103isw4duq" path="res://scenes/Players/Valiente.tscn" id="10_fbiu7"]
+[ext_resource type="Script" path="res://scripts/CameraTransition.gd" id="11_8h5re"]
+[ext_resource type="PackedScene" uid="uid://cvuagfk5apujc" path="res://scenes/NextLevel.tscn" id="12_o7knb"]
+[ext_resource type="AudioStream" uid="uid://bjq8c8de4ijf2" path="res://assets/Music/MUSIC.wav" id="13_0asgp"]
+
+[node name="Level-4" type="Node2D"]
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
+position = Vector2(34, 434)
+
+[node name="SpawnPoint" type="Marker2D" parent="SpawnPoint"]
+position = Vector2(34, 434)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_offset = Vector2(-214.812, 160.579)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-112, 57)
+scale = Vector2(1.5, 1.5)
+motion_scale = Vector2(0.9, 1)
+motion_mirroring = Vector2(550, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(14, -37.3333)
+scale = Vector2(0.975694, 1.11523)
+texture = ExtResource("1_ew1ba")
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-112, 56)
+scale = Vector2(1.5, 1.5)
+motion_scale = Vector2(0.8, 1)
+motion_mirroring = Vector2(570, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+texture = ExtResource("2_drfaw")
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-112, 56)
+scale = Vector2(1.5, 1.5)
+motion_scale = Vector2(0.7, 1)
+motion_mirroring = Vector2(570, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+texture = ExtResource("3_j2e5a")
+centered = false
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-112, 56)
+scale = Vector2(1.5, 1.5)
+motion_scale = Vector2(0.6, 1)
+motion_mirroring = Vector2(570, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+texture = ExtResource("4_ueexr")
+centered = false
+
+[node name="LevelController" type="Node2D" parent="."]
+script = ExtResource("5_n5owd")
+spawn_point_scene = ExtResource("6_m5bpr")
+
+[node name="PlayerController" type="Node2D" parent="."]
+script = ExtResource("7_pqqle")
+cats = Array[PackedScene]([ExtResource("8_u45v0"), ExtResource("9_coyf2"), ExtResource("10_fbiu7")])
+
+[node name="CameraTransitionController" type="Node2D" parent="."]
+script = ExtResource("11_8h5re")
+
+[node name="Meta" parent="." instance=ExtResource("12_o7knb")]
+position = Vector2(866, 54)
+
+[node name="Traps" type="Node2D" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_0asgp")
+volume_db = -10.0
+autoplay = true

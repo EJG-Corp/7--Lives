@@ -1,23 +1,23 @@
-[gd_scene load_steps=21 format=3 uid="uid://dcato6vfmui0h"]
+[gd_scene load_steps=20 format=3 uid="uid://c75sf33xtjont"]
 
-[ext_resource type="Script" path="res://scripts/Level-2.gd" id="1_ud4qo"]
-[ext_resource type="Texture2D" uid="uid://dattjloj8qa5c" path="res://assets/Background/1.png" id="2_1xcgx"]
-[ext_resource type="Texture2D" uid="uid://c2qxnlk73kiv6" path="res://assets/Background/2.png" id="3_w443r"]
-[ext_resource type="Texture2D" uid="uid://bgyq1x2ncuk7m" path="res://assets/Background/3.png" id="4_r7oqa"]
-[ext_resource type="Texture2D" uid="uid://gecanenaxt4y" path="res://assets/Background/4.png" id="5_f1w66"]
-[ext_resource type="Script" path="res://scripts/LevelController.gd" id="6_vajxx"]
-[ext_resource type="PackedScene" uid="uid://dww8jv2cxerjl" path="res://scenes/spawn_point.tscn" id="7_fcetx"]
-[ext_resource type="Script" path="res://scripts/PlayerManager.gd" id="8_xr111"]
-[ext_resource type="PackedScene" uid="uid://c8nsu3xni1t2u" path="res://scenes/Players/Archer.tscn" id="9_s6ujr"]
-[ext_resource type="PackedScene" uid="uid://dug1ljgw1qj3k" path="res://scenes/Players/Neno.tscn" id="10_2a7tf"]
-[ext_resource type="PackedScene" uid="uid://dqc103isw4duq" path="res://scenes/Players/Valiente.tscn" id="11_oho7u"]
-[ext_resource type="Script" path="res://scripts/CameraTransition.gd" id="12_ws7cv"]
-[ext_resource type="PackedScene" uid="uid://cvuagfk5apujc" path="res://scenes/NextLevel.tscn" id="13_qgija"]
-[ext_resource type="AudioStream" uid="uid://bjq8c8de4ijf2" path="res://assets/Music/MUSIC.wav" id="14_e5hh5"]
-[ext_resource type="Texture2D" uid="uid://dt0gwfdk1488l" path="res://assets/Ruins/tiles.png" id="14_vfu34"]
+[ext_resource type="Texture2D" uid="uid://dattjloj8qa5c" path="res://assets/Background/1.png" id="1_8113h"]
+[ext_resource type="Script" path="res://scripts/Level-3.gd" id="1_qm02p"]
+[ext_resource type="Texture2D" uid="uid://c2qxnlk73kiv6" path="res://assets/Background/2.png" id="2_aep5w"]
+[ext_resource type="Texture2D" uid="uid://bgyq1x2ncuk7m" path="res://assets/Background/3.png" id="3_rymx8"]
+[ext_resource type="Texture2D" uid="uid://gecanenaxt4y" path="res://assets/Background/4.png" id="4_qhi3u"]
+[ext_resource type="Script" path="res://scripts/LevelController.gd" id="5_xnm72"]
+[ext_resource type="PackedScene" uid="uid://dww8jv2cxerjl" path="res://scenes/spawn_point.tscn" id="6_4hvw3"]
+[ext_resource type="Script" path="res://scripts/PlayerManager.gd" id="7_3s06c"]
+[ext_resource type="PackedScene" uid="uid://c8nsu3xni1t2u" path="res://scenes/Players/Archer.tscn" id="8_fqltl"]
+[ext_resource type="PackedScene" uid="uid://dug1ljgw1qj3k" path="res://scenes/Players/Neno.tscn" id="9_vyn0r"]
+[ext_resource type="PackedScene" uid="uid://dqc103isw4duq" path="res://scenes/Players/Valiente.tscn" id="10_k2k61"]
+[ext_resource type="Script" path="res://scripts/CameraTransition.gd" id="11_cm5vb"]
+[ext_resource type="PackedScene" uid="uid://cvuagfk5apujc" path="res://scenes/NextLevel.tscn" id="12_qto6k"]
+[ext_resource type="AudioStream" uid="uid://bjq8c8de4ijf2" path="res://assets/Music/MUSIC.wav" id="13_7cbte"]
+[ext_resource type="Texture2D" uid="uid://dt0gwfdk1488l" path="res://assets/Ruins/tiles.png" id="14_bvaa6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4efqv"]
-texture = ExtResource("14_vfu34")
+texture = ExtResource("14_bvaa6")
 texture_region_size = Vector2i(8, 8)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -181,17 +181,15 @@ tile_size = Vector2i(8, 8)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_4efqv")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_y7gh0"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q3m64"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ce0en"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_01hkm"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_efu2n"]
-
-[node name="Level-2" type="Node2D"]
-script = ExtResource("1_ud4qo")
+[node name="Level-3" type="Node2D"]
+script = ExtResource("1_qm02p")
 
 [node name="SpawnPoint" type="Marker2D" parent="."]
-position = Vector2(34, 434)
+position = Vector2(44, 324)
 
 [node name="SpawnPoint" type="Marker2D" parent="SpawnPoint"]
 position = Vector2(34, 434)
@@ -208,7 +206,7 @@ motion_mirroring = Vector2(550, 0)
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(14, -37.3333)
 scale = Vector2(0.975694, 1.11523)
-texture = ExtResource("2_1xcgx")
+texture = ExtResource("1_8113h")
 centered = false
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -218,7 +216,7 @@ motion_scale = Vector2(0.8, 1)
 motion_mirroring = Vector2(570, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-texture = ExtResource("3_w443r")
+texture = ExtResource("2_aep5w")
 centered = false
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -228,7 +226,7 @@ motion_scale = Vector2(0.7, 1)
 motion_mirroring = Vector2(570, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
-texture = ExtResource("4_r7oqa")
+texture = ExtResource("3_rymx8")
 centered = false
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -238,60 +236,61 @@ motion_scale = Vector2(0.6, 1)
 motion_mirroring = Vector2(570, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
-texture = ExtResource("5_f1w66")
+texture = ExtResource("4_qhi3u")
 centered = false
 
 [node name="LevelController" type="Node2D" parent="."]
-script = ExtResource("6_vajxx")
-spawn_point_scene = ExtResource("7_fcetx")
+script = ExtResource("5_xnm72")
+spawn_point_scene = ExtResource("6_4hvw3")
 
 [node name="PlayerController" type="Node2D" parent="."]
-script = ExtResource("8_xr111")
-cats = Array[PackedScene]([ExtResource("9_s6ujr"), ExtResource("10_2a7tf"), ExtResource("11_oho7u")])
+script = ExtResource("7_3s06c")
+cats = Array[PackedScene]([ExtResource("8_fqltl"), ExtResource("9_vyn0r"), ExtResource("10_k2k61")])
 
 [node name="CameraTransitionController" type="Node2D" parent="."]
-script = ExtResource("12_ws7cv")
+script = ExtResource("11_cm5vb")
 
-[node name="Meta" parent="." instance=ExtResource("13_qgija")]
-position = Vector2(866, 54)
+[node name="Meta" parent="." instance=ExtResource("12_qto6k")]
+position = Vector2(35, 145)
 
 [node name="Traps" type="Node2D" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_7cbte")
+volume_db = -10.0
+autoplay = true
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_puppi")
 format = 2
-layer_0/tile_data = PackedInt32Array(3407914, 0, 4, 3407915, 0, 4, 3407916, 0, 4, 3407917, 0, 4, 3407918, 0, 4, 3407919, 0, 4, 3407920, 0, 4, 3735553, 327680, 5, 3735554, 327680, 5, 3735555, 327680, 5, 3735556, 327680, 5, 3735557, 327680, 5, 3735558, 327680, 5, 3735559, 327680, 5, 3735560, 327680, 5, 3735561, 327680, 5, 3735562, 327680, 5, 3735563, 327680, 5, 3735564, 327680, 5, 3735565, 327680, 5, 3735566, 327680, 5, 3407921, 0, 4, 3407922, 0, 4, 3407923, 0, 4, 3407924, 0, 4, 3407925, 0, 4, 3407926, 0, 4, 3407927, 0, 4, 3407928, 0, 4, 3407929, 0, 4, 3407930, 0, 4, 3407931, 0, 4, 3407932, 0, 4, 3407933, 0, 4, 3407934, 0, 4, 3407935, 0, 4, 3407936, 0, 4, 3407937, 0, 4, 3407938, 0, 4, 3407939, 0, 4, 3407940, 0, 4, 3407941, 0, 4, 3407942, 0, 4, 3407943, 0, 4, 3407944, 0, 4, 3407945, 0, 4, 3407946, 0, 4, 3407947, 0, 4, 3014737, 65536, 3, 2949201, 65536, 3, 2883665, 65536, 3, 2818129, 65536, 3, 2228305, 65536, 3, 2293841, 65536, 3, 2424913, 65536, 3, 2490449, 65536, 3, 2555985, 65536, 3, 2621521, 65536, 3, 2687057, 65536, 3, 2752593, 65536, 3, 3407912, 0, 4, 3407913, 0, 4, 3407910, 0, 4, 3407911, 0, 4, 2621483, 65536, 3, 2687019, 65536, 3, 2752555, 65536, 3, 2818091, 65536, 3, 2883627, 65536, 3, 2949163, 65536, 3, 3014699, 65536, 3, 3080235, 65536, 3, 2097222, 65536, 3, 2162758, 65536, 3, 2228294, 65536, 3, 2293830, 65536, 3, 2359366, 65536, 3, 2424902, 65536, 3, 2490438, 65536, 3, 2555974, 65536, 3, 2621510, 65536, 3, 2359377, 65536, 3, 1835078, 65536, 3, 1900614, 65536, 3, 1966150, 65536, 3, 2031686, 65536, 3, 1179729, 65536, 3, 1245265, 65536, 3, 1310801, 65536, 3, 1376337, 65536, 3, 1441873, 65536, 3, 1507409, 65536, 3, 1572945, 65536, 3, 1638481, 65536, 3, 1704017, 65536, 3, 655430, 65536, 3, 720966, 65536, 3, 786502, 65536, 3, 852038, 65536, 3, 917574, 65536, 3, 983110, 65536, 3, 1048646, 65536, 3, 1114182, 65536, 3, 1179718, 65536, 3, 720980, 0, 4, 720981, 0, 4, 720982, 0, 4, 720983, 0, 4, 720984, 0, 4, 720985, 0, 4, 720986, 0, 4, 720987, 0, 4, 720988, 0, 4, 720989, 0, 4, 720990, 0, 4, 720991, 0, 4, 720992, 0, 4, 720993, 0, 4, 720994, 0, 4, 720995, 0, 4, 720996, 0, 4, 720997, 0, 4, 720998, 0, 4, 720999, 0, 4, 721000, 0, 4, 721001, 0, 4, 721002, 0, 4, 721003, 0, 4, 721004, 0, 4, 721005, 0, 4, 721006, 0, 4, 721007, 0, 4)
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("14_e5hh5")
-volume_db = -10.0
-autoplay = true
+layer_0/tile_data = PackedInt32Array(1638402, 327680, 5, 3538946, 327680, 5, 1638403, 327680, 5, 3538947, 327680, 5, 1638404, 327680, 5, 3538948, 327680, 5, 1638405, 327680, 5, 3538949, 327680, 5, 1638406, 327680, 5, 3538950, 327680, 5, 1638407, 327680, 5, 3538951, 327680, 5, 1638408, 327680, 5, 3538952, 327680, 5, 1638409, 327680, 5, 3538953, 327680, 5, 1638410, 327680, 5, 3538954, 327680, 5, 1638411, 327680, 5, 3538955, 327680, 5, 1638412, 327680, 5, 3538956, 327680, 5, 1638413, 327680, 5, 3538957, 327680, 5, 1638414, 327680, 5, 3538958, 327680, 5, 1638415, 327680, 5, 3538959, 327680, 5, 1638416, 327680, 5, 3538960, 327680, 5, 1638417, 327680, 5, 1638418, 327680, 5, 1638419, 327680, 5, 3538990, 0, 6, 3538991, 0, 6, 3538992, 0, 6, 2818097, 65536, 3, 2883633, 65536, 3, 2949169, 65536, 3, 3014705, 65536, 3, 3080241, 65536, 3, 3145777, 65536, 3, 3538993, 0, 6, 3538994, 0, 6, 3538995, 0, 6, 3538996, 0, 6, 3538997, 0, 6, 3538998, 0, 6, 3538999, 0, 6, 3539000, 0, 6, 3539001, 0, 6, 3539002, 0, 6, 1114179, 0, 6, 1114180, 0, 6, 1114181, 0, 6, 1114182, 0, 6, 1114183, 0, 6, 1114184, 0, 6, 1114185, 0, 6, 1114186, 0, 6, 1114187, 0, 6, 1114188, 0, 6, 1114189, 0, 6, 1114190, 0, 6, 1114191, 0, 6, 1114192, 0, 6, 1114193, 0, 6, 1114194, 0, 6, 1114195, 0, 6, 1114196, 0, 6, 1114197, 0, 6, 1114198, 0, 6, 1114199, 0, 6, 1114200, 0, 6, 1114201, 0, 6, 1114202, 0, 6, 1114203, 0, 6, 1114204, 0, 6, 1114205, 0, 6, 3539037, 0, 6, 1114206, 0, 6, 3539038, 0, 6, 1114207, 0, 6, 3539039, 0, 6, 1114208, 0, 6, 3539040, 0, 6, 1114209, 0, 6, 3539041, 0, 6, 1114210, 0, 6, 3539042, 0, 6, 1114211, 0, 6, 3539043, 0, 6, 3539044, 0, 6, 3539045, 0, 6, 3539046, 0, 6, 3539047, 0, 6, 3539048, 0, 6, 3539049, 0, 6, 3539050, 0, 6, 3539051, 0, 6, 3539052, 0, 6, 3539053, 0, 6, 2687071, 65536, 3, 2752607, 65536, 3, 2818143, 65536, 3, 2883679, 65536, 3, 2949215, 65536, 3, 3014751, 65536, 3, 2031752, 0, 6, 2031753, 0, 6, 2031754, 0, 6, 2031755, 0, 6, 2031756, 0, 6, 2031757, 0, 6, 2031758, 0, 6, 2031759, 0, 6, 2031722, 0, 6, 2031723, 0, 6, 2031724, 0, 6, 2031725, 0, 6, 2031726, 0, 6, 2031727, 0, 6, 2031728, 0, 6, 2031729, 0, 6, 1310839, 0, 6, 2818167, 0, 6, 1310840, 0, 6, 2818168, 0, 6, 1310841, 0, 6, 2818169, 0, 6, 1310842, 0, 6, 2818170, 0, 6, 1310843, 0, 6, 2818171, 0, 6, 1310844, 0, 6, 2818172, 0, 6, 1310845, 0, 6, 2818173, 0, 6, 2818174, 0, 6, 1310846, 0, 6, 1310847, 0, 6, 1310848, 0, 6, 1310849, 0, 6, 2818175, 0, 6, 2818176, 0, 6, 2818177, 0, 6, 1114212, 0, 6, 1114213, 0, 6, 1114214, 0, 6)
 
 [node name="Limites" type="StaticBody2D" parent="."]
+position = Vector2(-4, 264)
+scale = Vector2(1, 30)
 
 [node name="Limite Izquierdo" type="CollisionShape2D" parent="Limites"]
-position = Vector2(-1, 324)
-scale = Vector2(1, 40)
-shape = SubResource("RectangleShape2D_y7gh0")
+shape = SubResource("RectangleShape2D_q3m64")
 
-[node name="Limite Inferior - Derecho" type="Area2D" parent="Limites"]
+[node name="Limite Derecho" type="CollisionShape2D" parent="Limites"]
+position = Vector2(1288, 0.566667)
+shape = SubResource("RectangleShape2D_q3m64")
 
-[node name="Limite Inferior" type="CollisionShape2D" parent="Limites/Limite Inferior - Derecho"]
-position = Vector2(964, 546)
-scale = Vector2(100, 1)
-shape = SubResource("RectangleShape2D_ce0en")
+[node name="Limite Inferior" type="Area2D" parent="Limites"]
+position = Vector2(4, -8.8)
+scale = Vector2(1, 0.0333333)
 
-[node name="Limite Derecho" type="CollisionShape2D" parent="Limites/Limite Inferior - Derecho"]
-position = Vector2(1405, 339)
-scale = Vector2(1, 40)
-shape = SubResource("RectangleShape2D_efu2n")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limites/Limite Inferior"]
+position = Vector2(762, 590)
+scale = Vector2(150, 5)
+shape = SubResource("RectangleShape2D_01hkm")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 414.0
-offset_top = 300.0
-offset_right = 639.0
-offset_bottom = 323.0
+offset_left = 544.0
+offset_top = 56.0
+offset_right = 937.0
+offset_bottom = 79.0
 scale = Vector2(0.5, 0.5)
-text = "Neno puede escalar paredes "
+text = "Valiente puede saltar mucho más que otros felinos"
 
-[connection signal="body_entered" from="Limites/Limite Inferior - Derecho" to="." method="_on_limite_inferior__derecho_body_entered"]
+[connection signal="body_entered" from="Limites/Limite Inferior" to="." method="_on_limite_inferior_body_entered"]
