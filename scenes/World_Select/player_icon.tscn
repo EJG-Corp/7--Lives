@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c01q2livic0br"]
 
-[ext_resource type="Texture2D" uid="uid://qve28vcddu1v" path="res://icon.svg" id="1_5bggq"]
+[ext_resource type="Texture2D" uid="uid://b5qikgrmq80eu" path="res://icon.svg" id="1_5bggq"]
 
 [node name="Sprite" type="TextureRect"]
 offset_right = 64.0

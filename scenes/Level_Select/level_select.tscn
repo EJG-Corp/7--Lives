@@ -16,6 +16,7 @@ grow_vertical = 2
 script = ExtResource("1_0d210")
 
 [node name="Background" parent="." instance=ExtResource("2_2swth")]
+layout_mode = 0
 offset_left = -381.0
 offset_top = -1.0
 offset_right = 1029.0

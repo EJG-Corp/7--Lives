@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://bojh5te1y52d0" path="res://scenes/UI/Right_click.tscn" id="16_v8ufc"]
 [ext_resource type="PackedScene" uid="uid://b73likq1skcmj" path="res://scenes/UI/R_button.tscn" id="17_ikoqo"]
 [ext_resource type="AudioStream" uid="uid://bjq8c8de4ijf2" path="res://assets/Music/MUSIC.wav" id="18_h0qp5"]
-[ext_resource type="PackedScene" uid="uid://doqls7qbcuk3c" path="res://scenes/UI/Level_Info.tscn" id="19_61rvy"]
+[ext_resource type="PackedScene" path="res://scenes/UI/Level_Info.tscn" id="19_61rvy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4efqv"]
 texture = ExtResource("8_omp2x")
