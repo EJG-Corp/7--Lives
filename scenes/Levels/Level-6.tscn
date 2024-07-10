@@ -485,7 +485,7 @@ offset_bottom = 23.0
 theme_override_colors/font_color = Color(0.709917, 0.672575, 0.280017, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("17_k6hhh")
-text = "Nivel 6 : 
+text = "Nivel 6 -
 "
 
 [node name="Label2" type="Label" parent="CanvasLayer/LevelInfo"]
