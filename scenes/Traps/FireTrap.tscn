@@ -1,8 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://b1f3hciy8cnx7"]
+[gd_scene load_steps=11 format=3 uid="uid://b1f3hciy8cnx7"]
 
 [ext_resource type="Script" path="res://scripts/FireTrap.gd" id="1_c1327"]
 [ext_resource type="Texture2D" uid="uid://bkbb6dotpwtwn" path="res://assets/Trap/Fire.png" id="1_fx3je"]
-[ext_resource type="Script" path="res://scenes/Traps/FireCollision.gd" id="2_ix4nb"]
 [ext_resource type="Texture2D" uid="uid://bcmymmagpoevf" path="res://assets/Trap/FireBox.png" id="2_m6ewo"]
 [ext_resource type="AudioStream" uid="uid://bdpptepbmyre6" path="res://assets/SFX/torch.wav" id="5_mcjwf"]
 [ext_resource type="AudioStream" uid="uid://cm8ryslwleakq" path="res://assets/SFX/flashlight-click.wav" id="6_8kbmi"]
@@ -199,9 +198,9 @@ _data = {
 script = ExtResource("1_c1327")
 
 [node name="fire" type="Area2D" parent="."]
-script = ExtResource("2_ix4nb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="fire"]
+position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_d7k7i")
 disabled = true
 
@@ -229,9 +228,11 @@ libraries = {
 [node name="Fire" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_mcjwf")
 volume_db = -10.0
+max_distance = 200.0
 
 [node name="Cick" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_8kbmi")
 volume_db = -20.0
+max_distance = 200.0
 
-[connection signal="body_entered" from="fire" to="fire" method="_on_body_entered"]
+[connection signal="body_entered" from="fire" to="." method="_on_fire_body_entered"]

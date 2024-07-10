@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/Spike.gd" id="1_6sviq"]
 [ext_resource type="Texture2D" uid="uid://dw4wgp4238i1p" path="res://assets/Trap/Spear.png" id="1_tr74s"]
-[ext_resource type="AudioStream" uid="uid://cmlde4vkvymqv" path="res://assets/SFX/spiketrap.wav" id="3_ryeur"]
+[ext_resource type="AudioStream" uid="uid://bul0w8nsb63sq" path="res://assets/SFX/spiketrap.wav" id="3_ryeur"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p10vi"]
 size = Vector2(16, 64)
@@ -137,6 +137,7 @@ libraries = {
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(0, 32)
 stream = ExtResource("3_ryeur")
-volume_db = -16.0
+volume_db = -20.0
+max_distance = 300.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

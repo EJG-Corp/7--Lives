@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://c53p4tojmxcx0"]
+[gd_scene load_steps=8 format=3 uid="uid://c53p4tojmxcx0"]
 
 [ext_resource type="Script" path="res://scripts/Saw.gd" id="1_2t6co"]
 [ext_resource type="Texture2D" uid="uid://bg507snvgudj5" path="res://assets/Trap/Suriken.png" id="1_qkipq"]
-[ext_resource type="Script" path="res://scenes/Traps/SawCollision.gd" id="3_roi56"]
 
 [sub_resource type="Curve2D" id="Curve2D_nhei2"]
 _data = {
@@ -64,7 +63,6 @@ texture = ExtResource("1_qkipq")
 hframes = 8
 
 [node name="Area2D" type="Area2D" parent="Path2D/PathFollow2D/Sprite2D"]
-script = ExtResource("3_roi56")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Sprite2D/Area2D"]
 scale = Vector2(1.7, 1.7)
@@ -75,4 +73,4 @@ libraries = {
 "": SubResource("AnimationLibrary_h3e1a")
 }
 
-[connection signal="body_entered" from="Path2D/PathFollow2D/Sprite2D/Area2D" to="Path2D/PathFollow2D/Sprite2D/Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Path2D/PathFollow2D/Sprite2D/Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,5 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://dcato6vfmui0h"]
+[gd_scene load_steps=22 format=3 uid="uid://dcato6vfmui0h"]
 
+[ext_resource type="Script" path="res://scripts/Level-2.gd" id="1_ud4qo"]
 [ext_resource type="Texture2D" uid="uid://dattjloj8qa5c" path="res://assets/Background/1.png" id="2_1xcgx"]
 [ext_resource type="Texture2D" uid="uid://c2qxnlk73kiv6" path="res://assets/Background/2.png" id="3_w443r"]
 [ext_resource type="Texture2D" uid="uid://bgyq1x2ncuk7m" path="res://assets/Background/3.png" id="4_r7oqa"]
@@ -12,7 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://dqc103isw4duq" path="res://scenes/Players/Valiente.tscn" id="11_oho7u"]
 [ext_resource type="Script" path="res://scripts/CameraTransition.gd" id="12_ws7cv"]
 [ext_resource type="PackedScene" uid="uid://cvuagfk5apujc" path="res://scenes/NextLevel.tscn" id="13_qgija"]
+[ext_resource type="AudioStream" uid="uid://bjq8c8de4ijf2" path="res://assets/Music/MUSIC.wav" id="14_e5hh5"]
 [ext_resource type="Texture2D" uid="uid://dt0gwfdk1488l" path="res://assets/Ruins/tiles.png" id="14_vfu34"]
+[ext_resource type="FontFile" uid="uid://cmu2sskge75jr" path="res://assets/Fonts/ThaleahFat.ttf" id="16_oq6bt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4efqv"]
 texture = ExtResource("14_vfu34")
@@ -179,7 +182,14 @@ tile_size = Vector2i(8, 8)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_4efqv")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y7gh0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ce0en"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_efu2n"]
+
 [node name="Level-2" type="Node2D"]
+script = ExtResource("1_ud4qo")
 
 [node name="SpawnPoint" type="Marker2D" parent="."]
 position = Vector2(34, 434)
@@ -244,11 +254,71 @@ cats = Array[PackedScene]([ExtResource("9_s6ujr"), ExtResource("10_2a7tf"), ExtR
 script = ExtResource("12_ws7cv")
 
 [node name="Meta" parent="." instance=ExtResource("13_qgija")]
-position = Vector2(897, 131)
+position = Vector2(866, 54)
 
 [node name="Traps" type="Node2D" parent="."]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_puppi")
 format = 2
-layer_0/tile_data = PackedInt32Array(3407914, 0, 4, 3407915, 0, 4, 3407916, 0, 4, 3407917, 0, 4, 3407918, 0, 4, 3407919, 0, 4, 3407920, 0, 4, 3735553, 327680, 5, 3735554, 327680, 5, 3735555, 327680, 5, 3735556, 327680, 5, 3735557, 327680, 5, 3735558, 327680, 5, 3735559, 327680, 5, 3735560, 327680, 5, 3735561, 327680, 5, 3735562, 327680, 5, 3735563, 327680, 5, 3735564, 327680, 5, 3735565, 327680, 5, 3735566, 327680, 5, 3407921, 0, 4, 3407922, 0, 4, 3407923, 0, 4, 3407924, 0, 4, 3407925, 0, 4, 3407926, 0, 4, 3407927, 0, 4, 3407928, 0, 4, 3407929, 0, 4, 3407930, 0, 4, 3407931, 0, 4, 3407932, 0, 4, 3407933, 0, 4, 3407934, 0, 4, 3407935, 0, 4, 3407936, 0, 4, 3407937, 0, 4, 3407938, 0, 4, 3407939, 0, 4, 3407940, 0, 4, 3407941, 0, 4, 3407942, 0, 4, 3407943, 0, 4, 3407944, 0, 4, 3407945, 0, 4, 3407946, 0, 4, 3407947, 0, 4, 3014737, 65536, 3, 2949201, 65536, 3, 2883665, 65536, 3, 2818129, 65536, 3, 1835089, 65536, 3, 1900625, 65536, 3, 1966161, 65536, 3, 2031697, 65536, 3, 2097233, 65536, 3, 2162769, 65536, 3, 2228305, 65536, 3, 2293841, 65536, 3, 1441880, 0, 4, 1441881, 0, 4, 1441882, 0, 4, 1441883, 0, 4, 1441884, 0, 4, 1441885, 0, 4, 1441886, 0, 4, 1441887, 0, 4, 1441888, 0, 4, 1441889, 0, 4, 1441890, 0, 4, 1441891, 0, 4, 1441892, 0, 4, 1441893, 0, 4, 1441894, 0, 4, 1441895, 0, 4, 1441896, 0, 4, 1441897, 0, 4, 1441898, 0, 4, 1441899, 0, 4, 1441900, 0, 4, 1441901, 0, 4, 1441902, 0, 4, 1441903, 0, 4, 1441904, 0, 4, 1441905, 0, 4, 1441906, 0, 4, 1441907, 0, 4, 2359377, 65536, 3, 2424913, 65536, 3, 2490449, 65536, 3, 2555985, 65536, 3, 2621521, 65536, 3, 2687057, 65536, 3, 2752593, 65536, 3, 1638481, 65536, 3, 1704017, 65536, 3, 1769553, 65536, 3, 3407912, 0, 4, 3407913, 0, 4, 3407910, 0, 4, 3407911, 0, 4, 2621483, 65536, 3, 2687019, 65536, 3, 2752555, 65536, 3, 2818091, 65536, 3, 2883627, 65536, 3, 2949163, 65536, 3, 3014699, 65536, 3, 3080235, 65536, 3, 1638482, 65536, 3, 1638483, 65536, 3, 1638484, 65536, 3, 1769554, 65536, 3, 1704018, 65536, 3, 1704019, 65536, 3, 1704020, 65536, 3, 1769556, 65536, 3, 1769555, 65536, 3, 1835090, 65536, 3, 1835091, 65536, 3, 1835092, 65536, 3)
+layer_0/tile_data = PackedInt32Array(3407914, 0, 4, 3407915, 0, 4, 3407916, 0, 4, 3407917, 0, 4, 3407918, 0, 4, 3407919, 0, 4, 3407920, 0, 4, 3735553, 327680, 5, 3735554, 327680, 5, 3735555, 327680, 5, 3735556, 327680, 5, 3735557, 327680, 5, 3735558, 327680, 5, 3735559, 327680, 5, 3735560, 327680, 5, 3735561, 327680, 5, 3735562, 327680, 5, 3735563, 327680, 5, 3735564, 327680, 5, 3735565, 327680, 5, 3735566, 327680, 5, 3407921, 0, 4, 3407922, 0, 4, 3407923, 0, 4, 3407924, 0, 4, 3407925, 0, 4, 3407926, 0, 4, 3407927, 0, 4, 3407928, 0, 4, 3407929, 0, 4, 3407930, 0, 4, 3407931, 0, 4, 3407932, 0, 4, 3407933, 0, 4, 3407934, 0, 4, 3407935, 0, 4, 3407936, 0, 4, 3407937, 0, 4, 3407938, 0, 4, 3407939, 0, 4, 3407940, 0, 4, 3407941, 0, 4, 3407942, 0, 4, 3407943, 0, 4, 3407944, 0, 4, 3407945, 0, 4, 3407946, 0, 4, 3407947, 0, 4, 3014737, 65536, 3, 2949201, 65536, 3, 2883665, 65536, 3, 2818129, 65536, 3, 2228305, 65536, 3, 2293841, 65536, 3, 2424913, 65536, 3, 2490449, 65536, 3, 2555985, 65536, 3, 2621521, 65536, 3, 2687057, 65536, 3, 2752593, 65536, 3, 3407912, 0, 4, 3407913, 0, 4, 3407910, 0, 4, 3407911, 0, 4, 2621483, 65536, 3, 2687019, 65536, 3, 2752555, 65536, 3, 2818091, 65536, 3, 2883627, 65536, 3, 2949163, 65536, 3, 3014699, 65536, 3, 3080235, 65536, 3, 2097222, 65536, 3, 2162758, 65536, 3, 2228294, 65536, 3, 2293830, 65536, 3, 2359366, 65536, 3, 2424902, 65536, 3, 2490438, 65536, 3, 2555974, 65536, 3, 2621510, 65536, 3, 2359377, 65536, 3, 1835078, 65536, 3, 1900614, 65536, 3, 1966150, 65536, 3, 2031686, 65536, 3, 1179729, 65536, 3, 1245265, 65536, 3, 1310801, 65536, 3, 1376337, 65536, 3, 1441873, 65536, 3, 1507409, 65536, 3, 1572945, 65536, 3, 1638481, 65536, 3, 1704017, 65536, 3, 655430, 65536, 3, 720966, 65536, 3, 786502, 65536, 3, 852038, 65536, 3, 917574, 65536, 3, 983110, 65536, 3, 1048646, 65536, 3, 1114182, 65536, 3, 1179718, 65536, 3, 720980, 0, 4, 720981, 0, 4, 720982, 0, 4, 720983, 0, 4, 720984, 0, 4, 720985, 0, 4, 720986, 0, 4, 720987, 0, 4, 720988, 0, 4, 720989, 0, 4, 720990, 0, 4, 720991, 0, 4, 720992, 0, 4, 720993, 0, 4, 720994, 0, 4, 720995, 0, 4, 720996, 0, 4, 720997, 0, 4, 720998, 0, 4, 720999, 0, 4, 721000, 0, 4, 721001, 0, 4, 721002, 0, 4, 721003, 0, 4, 721004, 0, 4, 721005, 0, 4, 721006, 0, 4, 721007, 0, 4)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_e5hh5")
+volume_db = -10.0
+autoplay = true
+
+[node name="Limites" type="StaticBody2D" parent="."]
+
+[node name="Limite Izquierdo" type="CollisionShape2D" parent="Limites"]
+position = Vector2(-1, 324)
+scale = Vector2(1, 40)
+shape = SubResource("RectangleShape2D_y7gh0")
+
+[node name="Limite Inferior - Derecho" type="Area2D" parent="Limites"]
+
+[node name="Limite Inferior" type="CollisionShape2D" parent="Limites/Limite Inferior - Derecho"]
+position = Vector2(964, 546)
+scale = Vector2(100, 1)
+shape = SubResource("RectangleShape2D_ce0en")
+
+[node name="Limite Derecho" type="CollisionShape2D" parent="Limites/Limite Inferior - Derecho"]
+position = Vector2(1405, 339)
+scale = Vector2(1, 40)
+shape = SubResource("RectangleShape2D_efu2n")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 375.0
+offset_top = 288.0
+offset_right = 600.0
+offset_bottom = 311.0
+scale = Vector2(0.8, 0.8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("16_oq6bt")
+text = "Neno puede escalar paredes "
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="LevelInfo" type="Node2D" parent="CanvasLayer"]
+position = Vector2(20, 20)
+scale = Vector2(2, 2)
+
+[node name="Nivel" type="Label" parent="CanvasLayer/LevelInfo"]
+offset_right = 54.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.709917, 0.672575, 0.280017, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("16_oq6bt")
+text = "Nivel 2 -
+"
+
+[node name="Label2" type="Label" parent="CanvasLayer/LevelInfo"]
+offset_left = 71.0
+offset_right = 218.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.709804, 0.67451, 0.278431, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("16_oq6bt")
+text = "\"Nombre del Gato\""
+
+[connection signal="body_entered" from="Limites/Limite Inferior - Derecho" to="." method="_on_limite_inferior__derecho_body_entered"]

@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://doqls7qbcuk3c"]
+
+[ext_resource type="FontFile" uid="uid://cmu2sskge75jr" path="res://assets/Fonts/ThaleahFat.ttf" id="1_psp06"]
+
+[node name="LevelInfo" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.709917, 0.672575, 0.280017, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_psp06")
+text = "Nivel 1  -
+"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 71.0
+offset_right = 218.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.709804, 0.67451, 0.278431, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_psp06")
+text = "\"Nombre del Gato\""

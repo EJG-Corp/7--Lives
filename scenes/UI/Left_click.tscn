@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dk6ud6b6o4r8l"]
+[gd_scene load_steps=3 format=3 uid="uid://dk6ud6b6o4r8l"]
 
 [ext_resource type="Texture2D" uid="uid://b2si33ccaa3nl" path="res://assets/UI/left_mouse_button_dark.png" id="1_3r6u8"]
+[ext_resource type="FontFile" uid="uid://cmu2sskge75jr" path="res://assets/Fonts/ThaleahFat.ttf" id="2_cledk"]
 
 [node name="LeftClick" type="Node2D"]
 
@@ -8,12 +9,16 @@
 texture = ExtResource("1_3r6u8")
 
 [node name="Label" type="Label" parent="."]
-offset_left = -77.0
-offset_top = -77.0
-offset_right = 89.0
-offset_bottom = 24.0
+offset_left = -167.0
+offset_top = -97.0
+offset_right = -1.0
+offset_bottom = 4.0
+scale = Vector2(2, 2)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_cledk")
 text = "Manten para apuntar
 Suelta para disparar
 
 
 "
+horizontal_alignment = 1
