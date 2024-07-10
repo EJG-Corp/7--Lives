@@ -10,7 +10,7 @@ offset_bottom = 23.0
 theme_override_colors/font_color = Color(0.709917, 0.672575, 0.280017, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_psp06")
-text = "Nivel 1 : 
+text = "Nivel 1  -
 "
 
 [node name="Label2" type="Label" parent="."]
