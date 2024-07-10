@@ -1,0 +1,153 @@
+[gd_scene load_steps=11 format=3 uid="uid://kdivn1x7c41k"]
+
+[ext_resource type="FontFile" uid="uid://cmu2sskge75jr" path="res://assets/Fonts/ThaleahFat.ttf" id="1_8f28k"]
+[ext_resource type="Script" path="res://scripts/Creditos.gd" id="1_fq36q"]
+[ext_resource type="Texture2D" uid="uid://dattjloj8qa5c" path="res://assets/Background/1.png" id="2_xn7rp"]
+[ext_resource type="Texture2D" uid="uid://c2qxnlk73kiv6" path="res://assets/Background/2.png" id="3_1v6kw"]
+[ext_resource type="Texture2D" uid="uid://bgyq1x2ncuk7m" path="res://assets/Background/3.png" id="4_h6io1"]
+[ext_resource type="Texture2D" uid="uid://gecanenaxt4y" path="res://assets/Background/4.png" id="5_8plkt"]
+[ext_resource type="AudioStream" uid="uid://bjq8c8de4ijf2" path="res://assets/Music/MUSIC.wav" id="7_7dg3k"]
+
+[sub_resource type="Animation" id="Animation_0x5ob"]
+resource_name = "Creditos"
+length = 30.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 29.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(356, 586), Vector2(356, -800)]
+}
+
+[sub_resource type="Animation" id="Animation_w6cj8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(356, 586)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ipp54"]
+_data = {
+"Creditos": SubResource("Animation_0x5ob"),
+"RESET": SubResource("Animation_w6cj8")
+}
+
+[node name="Creditos" type="Node2D"]
+script = ExtResource("1_fq36q")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 356.0
+offset_top = 586.0
+offset_right = 734.0
+offset_bottom = 1262.01
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_8f28k")
+text = "Créditos
+
+Desarrollo del Juego
+
+EJG CORP:
+
+Edward
+Gonzalo Cartes Ortega
+Jorge Cruces
+
+Diseñadores de Niveles:
+
+Edward
+Gonzalo Cartes Ortega
+Jorge Cruces
+
+Compositores y Músicos:
+
+Cristobal Rojas
+
+Agradecimientos Especiales:
+
+
+BDragon1727 - Trap Platformer 
+ghostpixxells - Pixel foods
+Mr. Breakfast - Prompts por  Prompt
+Rick Hoppmann - Pixel Font
+Adam Saltsman - Tilemap Amarelo
+Free Game Assets - Sky Backgrounds
+LVGames - Glowing Ball
+
+
+Agradecimientos Finales:
+
+A todos los jugadores de nuestro juego y
+ A los Michis del Mundo por hacer posible este juego. "
+horizontal_alignment = 1
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_offset = Vector2(-214.812, 160.579)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-112, 57)
+scale = Vector2(1.5, 1.5)
+motion_scale = Vector2(0.9, 1)
+motion_mirroring = Vector2(550, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(14, -37.3333)
+scale = Vector2(0.975694, 1.11523)
+texture = ExtResource("2_xn7rp")
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-112, 56)
+scale = Vector2(1.5, 1.5)
+motion_scale = Vector2(0.8, 1)
+motion_mirroring = Vector2(570, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+texture = ExtResource("3_1v6kw")
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-112, 56)
+scale = Vector2(1.5, 1.5)
+motion_scale = Vector2(0.7, 1)
+motion_mirroring = Vector2(570, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+texture = ExtResource("4_h6io1")
+centered = false
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-112, 56)
+scale = Vector2(1.5, 1.5)
+motion_scale = Vector2(0.6, 1)
+motion_mirroring = Vector2(570, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+texture = ExtResource("5_8plkt")
+centered = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(531, 270)
+zoom = Vector2(1.5, 1.5)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ipp54")
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_7dg3k")
+volume_db = -16.0
