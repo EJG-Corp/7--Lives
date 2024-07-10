@@ -1,10 +1,11 @@
-[gd_scene load_steps=42 format=3 uid="uid://dug1ljgw1qj3k"]
+[gd_scene load_steps=43 format=3 uid="uid://dug1ljgw1qj3k"]
 
-[ext_resource type="Script" path="res://scripts/MovementPlayer.gd" id="1_hwwhk"]
+[ext_resource type="Script" path="res://scripts/power_cats/Neno.gd" id="1_gx12c"]
 [ext_resource type="Texture2D" uid="uid://dkqvwgjwbeigt" path="res://assets/Meow Knight/SpriteSheet Horizontal3.png" id="2_fuily"]
 [ext_resource type="Texture2D" uid="uid://buwsnjai5jik8" path="res://assets/Mechanic/cursor.png" id="3_e1ffi"]
 [ext_resource type="Script" path="res://scripts/CursorPlayer.gd" id="4_0w5yg"]
 [ext_resource type="PackedScene" uid="uid://uuo37wx1l3y3" path="res://scenes/bullet.tscn" id="5_rit4u"]
+[ext_resource type="AudioStream" path="res://assets/SFX/jump.wav" id="6_t86wj"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jf861"]
 animation = &"Die"
@@ -197,6 +198,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [Vector2i(1, 2)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Neno/AudioStreamPlayer2D:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_laux3"]
 resource_name = "Idle"
@@ -249,6 +262,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [Vector2i(0, 2), Vector2i(1, 2), Vector2i(3, 2)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Neno/AudioStreamPlayer2D:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0101838),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b6bt0"]
 _data = {
@@ -268,7 +293,7 @@ radius = 7.35291
 height = 23.5294
 
 [node name="Neno" type="CharacterBody2D"]
-script = ExtResource("1_hwwhk")
+script = ExtResource("1_gx12c")
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 root_node = NodePath("../..")
@@ -287,6 +312,7 @@ libraries = {
 texture = ExtResource("2_fuily")
 hframes = 10
 vframes = 4
+frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.68, 0.68)
@@ -304,7 +330,7 @@ zoom = Vector2(2, 2)
 process_callback = 0
 limit_left = 0
 limit_top = 2
-limit_right = 1030
+limit_right = 1500
 limit_bottom = 500
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
@@ -314,3 +340,9 @@ drag_left_margin = 0.03
 drag_top_margin = 0.9
 drag_right_margin = 0.75
 drag_bottom_margin = 0.08
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_t86wj")
+volume_db = -25.0
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]

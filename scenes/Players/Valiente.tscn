@@ -1,6 +1,6 @@
 [gd_scene load_steps=42 format=3 uid="uid://dqc103isw4duq"]
 
-[ext_resource type="Script" path="res://scripts/MovementPlayer.gd" id="1_en4u5"]
+[ext_resource type="Script" path="res://scripts/power_cats/Valiente.gd" id="1_tnq2b"]
 [ext_resource type="Texture2D" uid="uid://bv0i0ro7nq8i8" path="res://assets/Meow Knight/SpriteSheet Horizontal2.png" id="2_noqyg"]
 [ext_resource type="Texture2D" uid="uid://buwsnjai5jik8" path="res://assets/Mechanic/cursor.png" id="3_yivt8"]
 [ext_resource type="Script" path="res://scripts/CursorPlayer.gd" id="4_ndjaw"]
@@ -197,6 +197,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [Vector2i(1, 2)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Valiente/AudioStreamPlayer2D:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_laux3"]
 resource_name = "Idle"
@@ -249,6 +261,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [Vector2i(0, 2), Vector2i(1, 2), Vector2i(3, 2)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Valiente/AudioStreamPlayer2D:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.00557807),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b6bt0"]
 _data = {
@@ -268,7 +292,7 @@ radius = 7.35291
 height = 23.5294
 
 [node name="Valiente" type="CharacterBody2D"]
-script = ExtResource("1_en4u5")
+script = ExtResource("1_tnq2b")
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 root_node = NodePath("../..")
@@ -287,7 +311,7 @@ libraries = {
 texture = ExtResource("2_noqyg")
 hframes = 10
 vframes = 4
-frame = 21
+frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.68, 0.68)
@@ -299,7 +323,7 @@ zoom = Vector2(2, 2)
 process_callback = 0
 limit_left = 0
 limit_top = 2
-limit_right = 1030
+limit_right = 1500
 limit_bottom = 500
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
@@ -315,3 +339,5 @@ texture = ExtResource("3_yivt8")
 script = ExtResource("4_ndjaw")
 radius = 30
 bullet_scene = ExtResource("5_i5edd")
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
