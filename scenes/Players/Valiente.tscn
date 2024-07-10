@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/power_cats/Valiente.gd" id="1_tnq2b"]
 [ext_resource type="Texture2D" uid="uid://bv0i0ro7nq8i8" path="res://assets/Meow Knight/SpriteSheet Horizontal2.png" id="2_noqyg"]
-[ext_resource type="Texture2D" uid="uid://buwsnjai5jik8" path="res://assets/Mechanic/cursor.png" id="3_yivt8"]
+[ext_resource type="Texture2D" uid="uid://bxk8gyw1xa0b8" path="res://assets/Mechanic/cursor.png" id="3_yivt8"]
 [ext_resource type="Script" path="res://scripts/CursorPlayer.gd" id="4_ndjaw"]
 [ext_resource type="PackedScene" uid="uid://uuo37wx1l3y3" path="res://scenes/bullet.tscn" id="5_i5edd"]
 

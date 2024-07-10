@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/MovementPlayer.gd" id="1_tiohs"]
 [ext_resource type="Texture2D" uid="uid://dl0iejxa7ecfh" path="res://assets/Meow Knight/SpriteSheet Horizontal.png" id="2_lvlhq"]
-[ext_resource type="Texture2D" uid="uid://buwsnjai5jik8" path="res://assets/Mechanic/cursor.png" id="3_yiejc"]
+[ext_resource type="Texture2D" uid="uid://bxk8gyw1xa0b8" path="res://assets/Mechanic/cursor.png" id="3_yiejc"]
 [ext_resource type="Script" path="res://scripts/CursorPlayer.gd" id="4_j6sf5"]
 [ext_resource type="PackedScene" uid="uid://uuo37wx1l3y3" path="res://scenes/bullet.tscn" id="5_u46yx"]
 [ext_resource type="AudioStream" uid="uid://0tbupyp3uary" path="res://assets/SFX/jump.wav" id="6_japid"]

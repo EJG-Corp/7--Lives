@@ -32,7 +32,10 @@ func increment_level(level_name: String) -> String:
 	var parts = level_name.split("-")
 	if parts.size() == 2:
 		var level_number = parts[1].to_int()  
-		level_number += 1  
+		level_number += 1 
 		var new_level_name = parts[0] + "-" + str(level_number)  
+		if level_number == 7:
+			new_level_name = "Creditos"
+
 		return new_level_name
 	return level_name  

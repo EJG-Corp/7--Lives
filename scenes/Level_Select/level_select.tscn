@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://c5fgf8hv1112n"]
+[gd_scene load_steps=7 format=3 uid="uid://c5fgf8hv1112n"]
 
 [ext_resource type="Script" path="res://scenes/Level_Select/level_select.gd" id="1_0d210"]
 [ext_resource type="PackedScene" uid="uid://tfii0fw55dd5" path="res://scenes/Level_Select/level_icon.tscn" id="1_klnpx"]
 [ext_resource type="PackedScene" uid="uid://c01q2livic0br" path="res://scenes/World_Select/player_icon.tscn" id="2_2swth"]
 [ext_resource type="Texture2D" uid="uid://g6xhyh5suv0d" path="res://assets/Menu/level-selector-1.png" id="3_0t47c"]
 [ext_resource type="Texture2D" uid="uid://dxcqr2kd4hmwy" path="res://assets/Meow Knight/Sprite0.png" id="4_mwnsd"]
+[ext_resource type="FontFile" uid="uid://cmu2sskge75jr" path="res://assets/Fonts/ThaleahFat.ttf" id="6_x55g7"]
 
 [node name="LevelSelect" type="Control"]
 layout_mode = 3
@@ -33,7 +34,7 @@ anchor_bottom = 0.889123
 next_scene_path = "res://scenes/Levels/Level-1.tscn"
 next_level_right = NodePath("../2")
 
-[node name="2" parent="." node_paths=PackedStringArray("next_level_up", "next_level_left", "next_level_right") instance=ExtResource("1_klnpx")]
+[node name="2" parent="." node_paths=PackedStringArray("next_level_left", "next_level_right") instance=ExtResource("1_klnpx")]
 layout_mode = 1
 anchor_left = 0.222222
 anchor_top = 0.592593
@@ -41,18 +42,8 @@ anchor_right = 0.278222
 anchor_bottom = 0.691593
 level_name = "2"
 next_scene_path = "res://scenes/Levels/Level-2.tscn"
-next_level_up = NodePath("../2A")
 next_level_left = NodePath("../1")
 next_level_right = NodePath("../3")
-
-[node name="2A" parent="." node_paths=PackedStringArray("next_level_down") instance=ExtResource("1_klnpx")]
-layout_mode = 1
-anchor_left = 0.222222
-anchor_top = 0.296296
-anchor_right = 0.278222
-anchor_bottom = 0.395296
-level_name = "2A"
-next_level_down = NodePath("../2")
 
 [node name="3" parent="." node_paths=PackedStringArray("next_level_left", "next_level_right") instance=ExtResource("1_klnpx")]
 layout_mode = 1
@@ -65,7 +56,7 @@ next_scene_path = "res://scenes/Levels/Level-3.tscn"
 next_level_left = NodePath("../2")
 next_level_right = NodePath("../4")
 
-[node name="4" parent="." node_paths=PackedStringArray("next_level_up", "next_level_down", "next_level_left") instance=ExtResource("1_klnpx")]
+[node name="4" parent="." node_paths=PackedStringArray("next_level_up", "next_level_left") instance=ExtResource("1_klnpx")]
 layout_mode = 1
 anchor_left = 0.555556
 anchor_top = 0.493827
@@ -74,10 +65,9 @@ anchor_bottom = 0.592827
 level_name = "4"
 next_scene_path = "res://scenes/Levels/Level-4.tscn"
 next_level_up = NodePath("../5A")
-next_level_down = NodePath("../5B")
 next_level_left = NodePath("../3")
 
-[node name="6" parent="." node_paths=PackedStringArray("next_level_up", "next_level_down") instance=ExtResource("1_klnpx")]
+[node name="6" parent="." node_paths=PackedStringArray("next_level_up") instance=ExtResource("1_klnpx")]
 layout_mode = 1
 anchor_left = 0.888889
 anchor_top = 0.493827
@@ -86,17 +76,6 @@ anchor_bottom = 0.592827
 level_name = "6"
 next_scene_path = "res://scenes/Levels/Level-6.tscn"
 next_level_up = NodePath("../5A")
-next_level_down = NodePath("../5B")
-
-[node name="5B" parent="." node_paths=PackedStringArray("next_level_left", "next_level_right") instance=ExtResource("1_klnpx")]
-layout_mode = 1
-anchor_left = 0.722222
-anchor_top = 0.691358
-anchor_right = 0.778222
-anchor_bottom = 0.790358
-level_name = "5B"
-next_level_left = NodePath("../4")
-next_level_right = NodePath("../6")
 
 [node name="5A" parent="." node_paths=PackedStringArray("next_level_left", "next_level_right") instance=ExtResource("1_klnpx")]
 layout_mode = 1
@@ -104,7 +83,7 @@ anchor_left = 0.722222
 anchor_top = 0.296296
 anchor_right = 0.778222
 anchor_bottom = 0.395296
-level_name = "5A"
+level_name = "5"
 next_scene_path = "res://scenes/Levels/Level-5.tscn"
 next_level_left = NodePath("../4")
 next_level_right = NodePath("../6")
@@ -112,3 +91,14 @@ next_level_right = NodePath("../6")
 [node name="PlayerIcon" parent="." instance=ExtResource("2_2swth")]
 layout_mode = 1
 texture = ExtResource("4_mwnsd")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 80.0
+offset_bottom = 43.0
+scale = Vector2(3, 3)
+theme_override_colors/font_color = Color(0.709917, 0.672575, 0.280017, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_x55g7")
+text = "Mundo 1"
